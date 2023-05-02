@@ -218,7 +218,7 @@ function baseQuestion(in_displayContainerID, in_questionCount) {
     inputElements_obj['question_row'] = container_row_main;
         // Create Sub 1 (ROW)
         var container_row_sub1 = document.createElement("div");
-        container_row_sub1.setAttribute("class", "card mt-3");
+        container_row_sub1.setAttribute("class", "card mt-3-row");
         // Insert Rows(CONTAINER)
         container_row_main.appendChild(container_row_sub1);
             // Create Sub 2 (ROW)
@@ -231,13 +231,13 @@ function baseQuestion(in_displayContainerID, in_questionCount) {
         // Create & Set (CELL LABEL)
         var insert_detail_label = document.createElement("label");
         insert_detail_label.setAttribute("id", "i-label--question-clQsID-detail-label-" + (in_questionCount).toString());
-        insert_detail_label.setAttribute("class", "col text-primary fs-2 fw-bold");
+        insert_detail_label.setAttribute("class", "col text-primary fs-2 fw-bold-qid");
         insert_detail_label.innerHTML = "QUESTION ID: ";
         // Create & Set (CELL CONTENT)
         var insert_detail_text = document.createElement("label");
         insert_detail_text.setAttribute("id", "i-label--question-clQsID-" + (in_questionCount).toString());
         insert_detail_text.setAttribute("name", "clQsID_value");
-        insert_detail_text.setAttribute("class", "col text-primary fs-2 fw-bold");
+        insert_detail_text.setAttribute("class", "col text-primary fs-2 fw-bold-qidnum");
     // Create & Set (CELL)
     var insert_detail_cell = document.createElement("div");
     insert_detail_cell.setAttribute("class", "row");
@@ -252,14 +252,14 @@ function baseQuestion(in_displayContainerID, in_questionCount) {
         // Create & Set (CELL LABEL)
         var insert_detail_label = document.createElement("label");
         insert_detail_label.setAttribute("id", "i-label--question-clQsBody-detail-label-" + (in_questionCount).toString());
-        insert_detail_label.setAttribute("class", "card-title text-dark text-uppercase fs-4 form-label");
+        insert_detail_label.setAttribute("class", "card-title text-dark text-uppercase fs-4 form-label-ques");
         insert_detail_label.setAttribute("for", "i-textarea--question-clQsBody-" + (in_questionCount).toString());
-        insert_detail_label.innerHTML = "Question Body";
+        insert_detail_label.innerHTML = "Question";
         // Create & Set (CELL CONTENT)
         var insert_detail_text = document.createElement("textarea");
-        insert_detail_text.setAttribute("id", "i-textarea--question-clQsBody-" + (in_questionCount).toString());
+        insert_detail_text.setAttribute("id", "i-textarea--question-clQsBody-qbox" + (in_questionCount).toString());
         insert_detail_text.setAttribute("name", "clQsBody_value");
-        insert_detail_text.setAttribute("class", "form-control card-text text-dark fs-5");
+        insert_detail_text.setAttribute("class", "form-control card-text text-dark fs-5-qbox");
         insert_detail_text.setAttribute("cols", "30");
         insert_detail_text.setAttribute("rows", "4");
         insert_detail_text.required = true;
@@ -284,7 +284,7 @@ function baseQuestion(in_displayContainerID, in_questionCount) {
     inputElements_obj['answer_row'] = insert_detail_cell;
         // Insert for ANSWER LABEL==============================
         var insert_detail_label = document.createElement("label");
-        insert_detail_label.setAttribute("class", "card-title text-dark text-uppercase fs-4 form-label");
+        insert_detail_label.setAttribute("class", "card-title text-dark text-uppercase fs-4 form-label-ans-title");
         insert_detail_label.innerHTML = "Answer/s";
         // Set (ROW)
         insert_detail_cell.appendChild(insert_detail_label);
@@ -294,7 +294,7 @@ function baseQuestion(in_displayContainerID, in_questionCount) {
         var insert_modify_deletebutton = document.createElement("input");
         insert_modify_deletebutton.setAttribute("type", "button");
         insert_modify_deletebutton.setAttribute("id", "i-inputbutton--exam-tbQuestion-delete-" + (in_questionCount).toString());
-        insert_modify_deletebutton.setAttribute("class", "btn btn-danger fs-3");
+        insert_modify_deletebutton.setAttribute("class", "btn btn-danger fs-3-delete");
         insert_modify_deletebutton.setAttribute("name", "inputbutton_qa_delete");
         insert_modify_deletebutton.setAttribute("value", "Delete Question");
     // Create & Set (FILLER CELL)
@@ -334,7 +334,7 @@ function baseAnswerFillBlanks(in_displayContainerID, in_questionCount, in_answer
     // Create & Set (CELL CONTENT)
     var insert_detail_answer = document.createElement("textarea");
     insert_detail_answer.setAttribute("id", "i-textarea--answer-fillblanks-clAsBody-" + (in_questionCount).toString() + "-" + (in_answerCount).toString());
-    insert_detail_answer.setAttribute("class", "c-element--answer-fillblanks-content form-control card-text text-dark fs-5");
+    insert_detail_answer.setAttribute("class", "c-element--answer-fillblanks-content form-control card-text text-dark fs-5-ans-box");
     insert_detail_answer.setAttribute("name", "answerfillblanks_clAsBody_value");
     insert_detail_answer.setAttribute("cols", "30");
     insert_detail_answer.setAttribute("rows", "4");

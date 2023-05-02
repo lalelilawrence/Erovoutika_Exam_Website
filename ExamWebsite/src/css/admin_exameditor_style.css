@@ -201,6 +201,34 @@ textarea {
 
 .height-100{height:100vh}
 
+.mt-3-examid{
+    margin-top:20px;
+}
+
+.mt-3-exampubstat{
+    margin-top:10px;
+}
+
+.mt-3-lastedit{
+    margin-top:10px;
+}
+
+.mt-3-pubby{
+    margin-top:10px;
+}
+
+.mt-3-examname{
+    margin-top:10px;
+}
+
+.mt-3-examdesc{
+    margin-top:10px;
+}
+
+.mt-3-examinst{
+    margin-top:10px;
+}
+
 @media screen and (min-width: 768px){
     body{
         margin: calc(var(--header-height) + 1rem) 0 0 0;
@@ -228,4 +256,395 @@ textarea {
     .show{width: calc(var(--nav-width) + 156px)}
 
     .body-pd{padding-left: calc(var(--nav-width) + 188px)}
+}
+
+@media only screen and (max-width: 375px) {
+
+    .card{
+        width:330px;
+        margin-left:-75px;
+    }
+
+    .mt-3-examid{
+        margin-left:-20px;
+        margin-top:20px;
+    }
+
+    .mt-3-exampubstat{
+        margin-left:-20px;
+        margin-top:10px;
+    }
+
+    .mt-3-lastedit{
+        margin-left:-20px;
+        margin-top:10px;
+    }
+
+    .mt-3-pubby{
+        margin-left:-20px;
+        margin-top:10px;
+    }
+
+    .mt-3-examname{
+        margin-left:-20px;
+        margin-top:10px;
+    }
+
+    .mt-3-examdesc{
+        margin-left:-20px;
+        margin-top:10px;
+    }
+
+    .mt-3-examinst{
+        margin-left:-20px;
+        margin-top:10px;
+    }
+
+    #i-select--exam-addqaselect{
+        margin-left:-250px;
+        width:290px;
+        font-size:22px;
+        margin-top:-400px;
+    }
+
+    #i-inputbutton--exam-addqabutton{
+        margin-left:-250px;
+        width:290px;
+        margin-top:-370px;
+    }
+
+    #i-inputbutton--exam-deletebutton{
+        margin-left:-250px;
+        width:290px;
+        margin-top:-340px;
+    }
+
+    #i-inputsubmit--exam-updatebutton{
+        margin-left:-250px;
+        width:290px;
+        margin-top:-310px;
+    }
+
+    #i-inputbutton--exam-publishbutton{
+        margin-left:-250px;
+        width:290px;
+        margin-top:-280px;
+    }
+
+    
+    .mt-3-row{
+        margin-left: -20px;
+        width: 330px;
+        margin-top:15px;
+    }
+
+    .fw-bold-qid{
+        margin-left:-15px;
+        width:400px;
+        word-wrap: break-word;
+        font-weight: bold;
+    }
+
+    .fw-bold-qidnum{
+        margin-left:-40px;
+        font-weight: bold;
+    }
+
+    .form-label-ques{
+        margin-left:-50px;
+    }
+
+    #i-textarea--question-clQsBody-qbox1{
+        margin-left:-35px;
+        width:230px;
+        font-size: 20px;
+    }
+
+    .form-label-ans-title{
+        margin-left:-50px;
+    }
+
+    .fs-5-ans-box{
+        margin-left:-35px;
+        width:230px;
+        font-size: 20px;
+    }
+
+    .fs-3-delete{
+        margin-left: -45px;
+        width:230px;
+        font-size:25px;
+        position:relative;
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 384px) and (max-height: 854px)   {
+
+
+    .card{
+        width:330px;
+        margin-left:-75px;
+    }
+
+    .mt-3-examid{
+        margin-left:-20px;
+        margin-top:20px;
+    }
+
+    .mt-3-exampubstat{
+        margin-left:-20px;
+        margin-top:10px;
+    }
+
+    .mt-3-lastedit{
+        margin-left:-20px;
+        margin-top:10px;
+    }
+
+    .mt-3-pubby{
+        margin-left:-20px;
+        margin-top:10px;
+    }
+
+    .mt-3-examname{
+        margin-left:-20px;
+        margin-top:10px;
+    }
+
+    .mt-3-examdesc{
+        margin-left:-20px;
+        margin-top:10px;
+    }
+
+    .mt-3-examinst{
+        margin-left:-20px;
+        margin-top:10px;
+    }
+
+    #i-select--exam-addqaselect{
+        margin-left:-250px;
+        width:290px;
+        font-size:22px;
+        margin-top:-400px;
+    }
+
+    #i-inputbutton--exam-addqabutton{
+        margin-left:-250px;
+        width:290px;
+        margin-top:-370px;
+    }
+
+    #i-inputbutton--exam-deletebutton{
+        margin-left:-250px;
+        width:290px;
+        margin-top:-340px;
+    }
+
+    #i-inputsubmit--exam-updatebutton{
+        margin-left:-250px;
+        width:290px;
+        margin-top:-310px;
+    }
+
+    #i-inputbutton--exam-publishbutton{
+        margin-left:-250px;
+        width:290px;
+        margin-top:-280px;
+    }
+
+    
+    .mt-3-row{
+        margin-left: -20px;
+        width: 330px;
+        margin-top:15px;
+    }
+
+    .fw-bold-qid{
+        margin-left:-15px;
+        width:400px;
+        word-wrap: break-word;
+        font-weight: bold;
+    }
+
+    .fw-bold-qidnum{
+        margin-left:-40px;
+        font-weight: bold;
+    }
+
+    .form-label-ques{
+        margin-left:-50px;
+    }
+
+    #i-textarea--question-clQsBody-qbox1{
+        margin-left:-35px;
+        width:230px;
+        font-size: 20px;
+    }
+
+    .form-label-ans-title{
+        margin-left:-50px;
+    }
+
+    .fs-5-ans-box{
+        margin-left:-35px;
+        width:230px;
+        font-size: 20px;
+    }
+
+    .fs-3-delete{
+        margin-left: -45px;
+        width:230px;
+        font-size:25px;
+        position:relative;
+    }
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 412px) and (max-height: 732px) {
+    
+    .card{
+        width:360px;
+        margin-left:-75px;
+    }
+
+    .mt-3-examid{
+        margin-left:-20px;
+        margin-top:20px;
+    }
+
+    .mt-3-exampubstat{
+        margin-left:-20px;
+        margin-top:10px;
+    }
+
+    .mt-3-lastedit{
+        margin-left:-20px;
+        margin-top:10px;
+    }
+
+    .mt-3-pubby{
+        margin-left:-20px;
+        margin-top:10px;
+    }
+
+    .mt-3-examname{
+        margin-left:-20px;
+        margin-top:10px;
+    }
+
+    .mt-3-examdesc{
+        margin-left:-20px;
+        margin-top:10px;
+    }
+
+    .mt-3-examinst{
+        margin-left:-20px;
+        margin-top:10px;
+    }
+
+    #i-select--exam-addqaselect{
+        margin-left:-250px;
+        width:290px;
+        font-size:22px;
+        margin-top:-400px;
+    }
+
+    #i-inputbutton--exam-addqabutton{
+        margin-left:-250px;
+        width:290px;
+        margin-top:-370px;
+    }
+
+    #i-inputbutton--exam-deletebutton{
+        margin-left:-250px;
+        width:290px;
+        margin-top:-340px;
+    }
+
+    #i-inputsubmit--exam-updatebutton{
+        margin-left:-250px;
+        width:290px;
+        margin-top:-310px;
+    }
+
+    #i-inputbutton--exam-publishbutton{
+        margin-left:-250px;
+        width:290px;
+        margin-top:-280px;
+    }
+
+    
+    .mt-3-row{
+        margin-left: -20px;
+        width: 360px;
+        margin-top:15px;
+    }
+
+    .fw-bold-qid{
+        margin-left:-15px;
+        width:400px;
+        word-wrap: break-word;
+        font-weight: bold;
+    }
+
+    .fw-bold-qidnum{
+        margin-left:-40px;
+        font-weight: bold;
+    }
+
+    .form-label-ques{
+        margin-left:-50px;
+    }
+
+    #i-textarea--question-clQsBody-qbox1{
+        margin-left:-35px;
+        width:260px;
+        font-size: 20px;
+    }
+
+    .form-label-ans-title{
+        margin-left:-50px;
+    }
+
+    .fs-5-ans-box{
+        margin-left:-35px;
+        width:260px;
+        font-size: 20px;
+    }
+
+    .fs-3-delete{
+        margin-left: -45px;
+        width:260px;
+        font-size:25px;
+        position:relative;
+    }
+
+
+
+
+
 }
