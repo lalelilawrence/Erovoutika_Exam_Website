@@ -153,9 +153,9 @@ if($_SESSION['client_sid']==session_id()){
                                 </button>
                           </div>';
                     echo  '<div class="card-body">';
-                      echo  '<h4 class="card-title mb-4">'. $row['clExName'].'</h4>
+                      echo  '<h4 class="card-title mb-4-title">'. $row['clExName'].'</h4>
                             <div class="hstack gap-3">';
-                        echo  '<div class="bg-light border-bottom border-top border-primary p-2">
+                        echo  '<div class="bg-light border-bottom border-top border-primary p-1">
                                 '. $row['clExPublishedDate'] .'
                               </div>
                               <div class="vr"></div>
@@ -163,11 +163,11 @@ if($_SESSION['client_sid']==session_id()){
                                 '. $data['total'] .' Items
                               </div>
                               <div class="vr"></div>
-                              <div class="bg-light border-bottom border-top border-primary p-2">
+                              <div class="bg-light border-bottom border-top border-primary p-3">
                                 '. $QuestionsType .'
                               </div>';
                         echo  '</div>';
-                        echo  '<p class="card-text mt-4">'. $row['clExDescription'] .'</p>';
+                        echo  '<p class="card-text mt-4-desc">'. $row['clExDescription'] .'</p>';
                       echo  '</div>';
                     echo  '</div>';
 
