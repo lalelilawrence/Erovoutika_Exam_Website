@@ -47,13 +47,14 @@ CREATE TABLE `tbExam` (
 	`clExPublishedBy` int(9) UNSIGNED DEFAULT NULL, 
 	`clExLastEditDate` datetime not null default now(),
 	`clExPublishedDate` datetime,
+	`clExPrice` float(9,2) NOT NULL,
     PRIMARY KEY (`clExID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 -- ==================================================================tbQuestion
 DROP TABLE IF EXISTS `tbQuestion`;
 CREATE TABLE `tbQuestion` (
 	`clQsID` int(9) UNSIGNED NOT NULL, -- PK
-	`clExID` int(9) UNSIGNED NOT NULL, -- FK to `tbExam` PK; PK
+	`clExID` int(9) UNSIGNED NOT NULL, -- FK to `tbExam` PK;
 	`clQsBody` varchar(3000) NOT NULL, 
 	`clQsType` int(1) UNSIGNED NOT NULL, -- 0 = Fill in the Blanks; 1 = Hybrid Multiple Choice
 	`clQsCorrectAnswer` varchar(7000) NOT NULL, 
@@ -95,8 +96,35 @@ CREATE TABLE `tbuserexamresult` (
 	`clUrID` int(9) UNSIGNED NOT NULL, -- FK to `tbusers` PK;
 	`clUrScore` int,
 	`clUrExTakenDate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP, 
-    PRIMARY KEY (`clExID`,`clUrID`), 
     CONSTRAINT `fkUa_clExID` FOREIGN KEY (`clExID`) REFERENCES `tbExam` (`clExID`),
 	CONSTRAINT `fkUa_clUrID` FOREIGN KEY (`clUrID`) REFERENCES `tbusers` (`clUrID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
--- ==================================================================
+-- ==================================================================tbuserpaidexam
+DROP TABLE IF EXISTS `tbuserpaidexam`;
+CREATE TABLE `tbuserpaidexam` (
+	`ID` int(9) UNSIGNED NOT NULL AUTO_INCREMENT, -- PK
+	`clUrID` int(9) UNSIGNED NOT NULL, -- FK to `tbusers` PK;
+	`clExID` int(9) UNSIGNED NOT NULL, -- FK to `tbexam` PK;
+	`clPurchasedDate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (`ID`),
+	CONSTRAINT `fkQs_clUrID` FOREIGN KEY (`clUrID`) REFERENCES `tbusers` (`clUrID`),
+	FOREIGN KEY (`clExID`) REFERENCES `tbexam` (`clExID`)
+
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- ==================================================================tbtransaction
+DROP TABLE IF EXISTS `tbtransaction`;
+CREATE TABLE `tbtransaction` (
+	`ID` int(9) UNSIGNED NOT NULL AUTO_INCREMENT, -- PK
+	`transactionID` varchar(99) NOT NULL,
+	`ExID` int(9) UNSIGNED NOT NULL, -- FK to `tbexam`
+	`transactionUserID` int(9) UNSIGNED NOT NULL, -- FK to `tbusers`
+	`transactionMthd` varchar(99) NOT NULL,
+	`transactionAmt` float(9,2) NOT NULL,
+	`transactionDate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	`transactionStat` varchar(99) NOT NULL,
+    PRIMARY KEY (`ID`),
+	FOREIGN KEY (`ExID`) REFERENCES `tbExam` (`clExID`),
+	CONSTRAINT `fkUa_transactionUserID` FOREIGN KEY (`transactionUserID`) REFERENCES `tbusers` (`clUrID`)
+
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- =======================================================a===========

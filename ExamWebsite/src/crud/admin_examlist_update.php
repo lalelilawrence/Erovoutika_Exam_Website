@@ -16,7 +16,7 @@
     if($updateType == 0) { // Delete Existing Exam
 
         // (tbQuestion)Fetch Questions Data======================================================================(START)
-        $sql_query = "SELECT `clQsID` FROM `tbQuestion` WHERE `clExID` = '$clExID_value';";
+        $sql_query = "SELECT `clQsID` FROM `tbquestion` WHERE `clExID` = '$clExID_value';";
         $fetch_sql_query = mysqli_query($connectdb, $sql_query);
         if($fetch_sql_query){
             $curr_tbQuestion_data = null; // Without this, it will likely cause an Error if the table data is empty, which means that it will not go through the loop below, which means that this variable is never declared.
@@ -32,11 +32,11 @@
             for($question_count = 0; $question_count < count($curr_tbQuestion_data); $question_count++) {
                 $clQsID_value = $curr_tbQuestion_data[$question_count]['clQsID'];
                 
-                $sql_query .= "DELETE FROM `tbAnswer`
+                $sql_query .= "DELETE FROM `tbanswer`
                     WHERE `clQsID` = '$clQsID_value';
                 ";
                 
-                $sql_query .= "DELETE FROM `tbQuestion`
+                $sql_query .= "DELETE FROM `tbquestion`
                     WHERE `clQsID` = '$clQsID_value' AND `clExID` = '$clExID_value';
                     ";
     
@@ -54,7 +54,7 @@
         // (tbQuestion)Fetch Questions Data======================================================================(END)
 
     
-        $sql_query .= "DELETE FROM `tbExam`
+        $sql_query .= "DELETE FROM `tbexam`
             WHERE `clExID` = '$clExID_value';
         ";
 
@@ -66,7 +66,7 @@
         $clExPublish_value = $_POST['clExPublish_ajax'];
         $clExPublishedBy_value = $_POST['clExPublishedBy_ajax'];
 
-        $sql_query .= "UPDATE `tbExam`
+        $sql_query .= "UPDATE `tbexam`
             SET `clExPublish` = '$clExPublish_value', 
                 `clExPublishedBy` = '$clExPublishedBy_value', 
                 `clExPublishedDate` = date_format(now(), '%Y-%m-%d %H:%i:%s')

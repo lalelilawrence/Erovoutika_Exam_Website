@@ -5,7 +5,7 @@ if($_SESSION['admin_sid']==session_id())
 {
     $clUrID = $_SESSION['clUrID'];
     $clUrUsername = $_SESSION['clUrUsername'];
-
+  
     // User profile photo
     $result = mysqli_query($connectdb, "SELECT clUrPhoto from tbusers where clUrID = $clUrID;");
     $row = $result->fetch_assoc();
@@ -38,67 +38,8 @@ if($_SESSION['admin_sid']==session_id())
     </head>
 
     <body id="body-pd">
-        <header class="header shadow" id="header">
-            <div class="header_toggle"> 
-                <i class='bx bx-menu' id="header-toggle"></i> 
-            </div>
-            <div id="i--account--admin">
-                <div class="header_img"> 
-                    <a href="AdminHome.php">
-                        <?php 
-                            if ($row['clUrPhoto'] == ""){
-                                echo '<img src="../images/Display Picture Icon.png" alt="Photo/Icon" class="img-fluid m-3-mlogo">';
-                                
-                            }
-                            else{
-                                echo '<img src="../images/user images/'. $row['clUrPhoto'] .'" alt="display picture">';
-                            }
-                        ?>
-                    </a>
-                </div>
-                <div>
-                    <button type="button" class="btn ms-4 mt-2">
-                        <a href="../includes/logout.php" class="fw-bold" id="i--button--logout">Logout</a>
-                    </button>
-                </div>
-            </div>
-        </header>
-        <div class="l-navbar" id="nav-bar">
-            <nav class="nav">
-                <div> 
-                    <!-- Admin Home with Logo -->
-                    <a href="AdminHome.php" class="nav_logo"> 
-                        <i>
-                            <img src="../images/Small Logo.png" alt="Erovoutika Logo" id="i--logo--erovoutika">
-                        </i> 
-                        <span class="nav_logo-name fs-5 fw-bold">Erouvotika</span> 
-                    </a>
-                    <div class="nav_list"> 
-                        <a href="AdminHome.php" class="nav_link active"> 
-                            <i class='bx bx-grid-alt nav_icon'></i> 
-                            <span class="nav_name fw-bold">Dashboard</span> 
-                        </a> 
-                        <a href="AdminProfile.php" class="nav_link">
-                            <i class='bx bx-user nav_icon'></i> 
-                            <span class="nav_name">Edit Profile</span> 
-                        </a>
-                        <a href="admin_usertable.php" class="nav_link"> 
-                            <i class='bx bx-table nav_icon'></i>
-                            <span class="nav_name">User Table</span> 
-                        </a> 
-                        <a href="AdminExamList.php" class="nav_link"> 
-                            <i class='bx bx-message-square-detail nav_icon'></i> 
-                            <span class="nav_name">Exam List</span> 
-                        </a>
-                    </div>
-                </div> 
-                    <a href="adminsignup_template.php"  class="btn btn-primary ms-3 mb-3">
-                        <i class="bi bi-pencil-square"></i> 
-                        <span class="nav_name" id="i--label--signout">Sign Up</span>
-                    </a>
-                </div> 
-            </nav>
-        </div>
+
+        <?php include __DIR__."/AdminNav.php"; ?>
 
         <!--Container Main start-->
         <div class="height-100" id="i--container--mainContent">
@@ -108,10 +49,10 @@ if($_SESSION['admin_sid']==session_id())
                     <div class="col-2">
                         <?php
                             if ($row['clUrPhoto'] == ""){
-                                echo '<img src="../images/Display Picture Icon.png" alt="Photo/Icon" class="img-fluid m-3-logo">';
+                                echo '<img src="/src/images/Display Picture Icon.png" alt="Photo/Icon" class="img-fluid m-3" id="i--banner--dp">';
                             }
                             else{
-                                echo '<img src="../images/user images/'. $row['clUrPhoto'] .'" alt="Photo/Icon" class="img-fluid m-3-logo">';
+                                echo '<img src="/src/images/user images/'. $row['clUrPhoto'] .'" alt="Photo/Icon" class="img-fluid m-3" id="i--banner--dp">';
                             }
                         ?>
                     </div>
@@ -143,7 +84,7 @@ if($_SESSION['admin_sid']==session_id())
                 -->
                 <?php
 
-                    $sql = "SELECT * FROM tbexam order by clExLastEditDate desc";
+                    $sql = "SELECT * FROM `tbexam` order by clExLastEditDate desc";
                     $result = $connectdb->query($sql);
                     
 

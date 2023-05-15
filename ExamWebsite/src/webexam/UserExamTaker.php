@@ -24,14 +24,14 @@
             else {
                 // If request "exam_id" has value, Edit Existing Exam... (e.g. ?exam_id=1)
                 // (tbExam)Fetch Exams ID======================================================================(START)
-                $sql_query = "SELECT `clExID`,`clExName`,`clExDescription`,`clExInstructions` FROM `tbExam` WHERE `clExID` = '$examID' AND `clExPublish` = 1;";
+                $sql_query = "SELECT `clExID`,`clExName`,`clExDescription`,`clExInstructions` FROM `tbexam` WHERE `clExID` = '$examID' AND `clExPublish` = 1;";
                 $fetch_sql_query = mysqli_query($connectdb, $sql_query);
                 if($fetch_sql_query){
                     if(mysqli_num_rows($fetch_sql_query) > 0) { // Exam Exists
                         $tbExam_data = mysqli_fetch_array($fetch_sql_query);
                         
                         // (tbQuestion)Fetch Questions Data======================================================================(START)
-                        $sql_query = "SELECT `clQsID`,`clExID`,`clQsBody`,`clQsType` FROM `tbQuestion` WHERE `clExID` = '$examID';";
+                        $sql_query = "SELECT `clQsID`,`clExID`,`clQsBody`,`clQsType` FROM `tbquestion` WHERE `clExID` = '$examID';";
                         $fetch_sql_query = mysqli_query($connectdb, $sql_query);
                         if($fetch_sql_query){
                             while($tbQuestion_row = mysqli_fetch_array($fetch_sql_query)){
@@ -49,7 +49,7 @@
                             for($question_count = 0; $question_count < count($tbQuestion_data); $question_count++) {
                                 $tbQuestion_clQsID = $tbQuestion_data[$question_count]['clQsID'];
                                 if($question_count == 0) {
-                                    $sql_query .= "SELECT * FROM `tbAnswer` WHERE ";
+                                    $sql_query .= "SELECT * FROM `tbanswer` WHERE ";
                                 }
                                 
                                 $sql_query .= "`clQsID` = '$tbQuestion_clQsID'";
@@ -141,6 +141,7 @@
 
         <!-- Custom CSS -->
         <link rel="stylesheet" href="../css/QuestionPageStyle.css">
+        <link rel="stylesheet" href="../css/UserProfileStyle.css">
 
         <!-- Scripts -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -148,36 +149,7 @@
     </head>
 
     <body>
-        <header class="bg-white border-5 border-bottom border-primary">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light ms-5 me-5">
-                <!-- Logo -->
-                <a class="navbar-brand" href="#"><img src="../images/Logo2.png" style="height: 60px;"></a>
-
-                <!-- NavList-->
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse position-absolute end-0" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <a class="nav-item nav-link  mt-4" href="#">Home</a>
-                        <a class="nav-item nav-link  mt-4" href="#">About</a>
-                        <a class="nav-item nav-link  mt-4" href="#">Contact</a>
-
-                        <!-- Profile Dropdown -->
-                        <div class="btn-group">
-                          <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="bi bi-person-fill"></i>
-                          </button>
-                          <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#"><i class="bi bi-person-circle me-2"></i>Profile</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="bi bi-gear-fill me-2"></i>Settings</a></li>
-                            <li><a class="dropdown-item" href="#"><span class="glyphicon me-2">&#xe017;</span>Logout</a></li>
-                          </ul>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </header>
+        <?php include(__DIR__."/../webclient/userNav.php")?>
 
         <main class="container mt-3 mb-3 bg-light">
             <!-- Upper Panel -->

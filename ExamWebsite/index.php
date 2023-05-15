@@ -1,5 +1,6 @@
 <?php 
-include_once 'src/includes/header.php';
+include_once __DIR__.'/src/includes/header.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -18,117 +19,136 @@ include_once 'src/includes/header.php';
   <body>
     <!-- Home -->
     <section class="section-main" id="home">
-      <div class="d-flex justify-content-start">
-			  <div class="home1">
-          <img src="src/images/login.png" id="logo2" style="position:absolute";>
-              <br><br>
-              <h4 class="info1" id="info1">&nbsp;&nbsp;&nbsp;One-Stop-ShopSHGOSPSHOSP <br>Innovative Solutions</h3>
-              <br>
-              <h5 class="info2" id="info2">We are team of Engineers and IT making <br> Solutions for Robotics, Automation, <br> Electronics and ICT.</h4>
-              <br><br>
+
+			  <div class="image">
+          <img src="src/images/test.png" id="logo2" alt="">
         </div>
+        <div class="content">
+        <h3 data-text1="One" data-text2="Solution">-Stop-Shop Innovative</h3><br>
+              <span>We are team of Engineers and IT making Solutions for Robotics, Automation, Electronics and ICT.</span>
+
       </div>
-    </section> 
+    </section>
 
     <!-- About Us -->
-    <section class="about-section" id="about-section">
-    	<div class="container">
-        <div class="row clearfix">
-          <!--Content Column-->
-              <div class="content-column col-md-6 col-sm-12 col-xs-12">
-                <div class="inner-column">
-                  <div class="sec-title">
-                    <div class="title">About Us</div>
-                    <h2>Who We Are</h2>
-                  </div>
-                    
-                  <div class="text">Erovoutika is a respected and experienced Automation and Robotics Company. Our highly professional teams, with in-depth knowledge of each jurisdiction, has been successfully deliver customer needs</div>
-                  <h5>Our Aim</h5>
-                  <div class="text">is to assist our clients in getting their needs and requirements in the easiest and fastest possible time in a most professional manner. We provide the highest quality service at the most reasonable cost.</div>
-                    <a href="#" class="theme-btn btn-style-three">Read More</a>
-                </div>
-              </div>
-                
-          <!--Image Column-->
-              <div class="image-column col-md-6 col-sm-12 col-xs-12">
-                <div class="inner-column " data-wow-delay="0ms" data-wow-duration="1500ms">
-                  <div class="image">
-                    <img src="src/images/web.gif" id="about-img" alt="">
-                      <div class="overlay-box">
-                        <div class="year-box"><span class="number">3</span>Years <br> Experience <br> Working</div>
-                      </div>
-                  </div>
-                </div>
-              </div>   
-        </div>
-      </div>
-    </section>
-
+    <section class="about section" style="background-color: white; padding-top: 30px; padding-bottom: 50px">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-7">
+				<div class="block">
+					<div class="section-title">
+          <h2>About Us</h2>
+          <h5>Erouvoutika</h2>
+						<p>A respected and experienced Automation and Robotics Company. Our highly professional teams, with in-depth knowledge of each jurisdiction, has been successfully deliver customer needs</p>
+					</div>
+          <h5>Our Aim</h5>
+					<p>is to assist our clients in getting their needs and requirements in the easiest and fastest possible time in a most professional manner. We provide the highest quality service at the most reasonable cost.</p>
+				</div>
+			</div>
+			<div class="col-md-5">
+				<div class="block">
+					<img src="src/images/login.png" alt="Img">
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+  
     <!-- Partnership -->
-    <section class="partnership"id="partnership">
-      <div class="row">
-        <div class="col-md-12">
-            <div class="site-heading text-center">
-            <h2><span>Partnership Industries</span></h2>   
+  <!--
+    <div class="row" style="margin-bottom: -70px; margin-top: 5%;">
+            <div class="col-md-12">
+                <div class="site-heading text-center">
+                    <h2><span>Industry Partners</span><h2>
+                    <h4></h4>
+                </div>
             </div>
-        </div>
-      <div class="logo-slider">
-        <div class="logo-slide-track">
-          <div class="slide">
-            <img src="src/images/client-1.png" alt="" style="height: 100px; width: 130px;" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </div>
-          <div class="slide">
-            <img src="src/images/client-2.png" alt="" style="height: 100px; width: 130px;" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </div>
-          <div class="slide">
-            <img src="src/images/client-3.png" alt="" style="height: 100px; width: 130px;" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </div>
-          <div class="slide">
-            <img src="src/images/client-4.png" alt="" style="height: 100px; width: 130px;" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </div>
-          <div class="slide">
-            <img src="src/images/client-6.png" alt="" style="height: 100px; width: 130px;" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </div>
-          <div class="slide">
-            <img src="src/images/client-1.png" alt="" style="height: 100px; width: 130px;" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </div>
-          <div class="slide">
-            <img src="src/images/client-2.png" alt="" style="height: 100px; width: 130px;" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </div>
-          <div class="slide">
-            <img src="src/images/client-3.png" alt="" style="height: 100px; width: 130px;" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </div>
-          <div class="slide">
-            <img src="src/images/client-4.png" alt="" style="height: 100px; width: 130px;" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </div>
-          <div class="slide">
-            <img src="src/images/client-5.png" alt="" style="height: 100px; width: 130px;" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </div>
-          <div class="slide">
-            <img src="src/images/client-6.png" alt="" style="height: 100px; width: 130px;" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </div>
-          <div class="slide">
-            <img src="src/images/client-1.png" alt="" style="height: 100px; width: 130px;" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </div>
-          <div class="slide">
-            <img src="src/images/client-2.png" alt="" style="height: 100px; width: 130px;" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </div>
-          <div class="slide">
-            <img src="src/images/client-3.png" alt="" style="height: 100px; width: 130px;" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </div>
-          <div class="slide">
-            <img src="src/images/client-4.png" alt="" style="height: 100px; width: 130px;" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </div>
-          <div class="slide">
-            <img src="src/images/client-5.png" alt="" style="height: 100px; width: 130px;" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </div>
-          <div class="slide">
-            <img src="src/images/client-6.png" alt="" style="height: 100px; width: 130px;" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </div>
-        </div>
-      </div>
-    </section>
-    <br><br><br><br><br><br><br><br>
+            </div>
+
+
+
+
+  <div class="wrapper">
+  
+	<div class="slider">
+		<div class="slide-track">
+
+		
+			<div class="slide">
+				<img src="src/images/client-1.png" style="height:110px; width: 170px; transform: translate(20%, 35%);"/>
+			</div>
+			
+			<div class="slide">
+				<img src="src/images/client-2.png" style="height:90px; width: 200px; transform: translate(10%, 55%);"/>
+			</div>
+			
+			<div class="slide">
+				<img src="src/images/client-3.png"/>
+			</div>
+			
+			<div class="slide">
+				<img src="src/images/client-4.png" style="width: 200px; height: 100px; transform: translate(10%, 50%);"/>
+			</div>
+			
+			<div class="slide">
+				<img src="src/images/client-5.png" style="height:160px; width: 160px; transform: translate(25%, 10%);"/>
+			</div>
+			
+			<div class="slide">
+				<img src="src/images/client-6.png" style="width: 200px; height: 90px; transform: translate(10%, 50%);"/>
+			</div>
+			
+			<div class="slide">
+				<img src="src/images/client-1.png" style="height:110px; width: 170px; transform: translate(20%, 35%);"/>
+			</div>
+			
+			<div class="slide">
+				<img src="src/images/client-2.png" style="height:90px; width: 200px; transform: translate(10%, 55%);"/>
+			</div>
+			
+			<div class="slide">
+				<img src="src/images/client-3.png" />
+			</div>
+			
+			<div class="slide">
+				<img src="src/images/client-4.png" style="width: 200px; height: 100px; transform: translate(10%, 50%);"/>
+			</div>
+			
+			<div class="slide">
+				<img src="src/images/client-5.png" style="height:160px; width: 160px; transform: translate(25%, 10%);"/>
+			</div>
+			
+			<div class="slide">
+				<img src="src/images/client-6.png" style="width: 200px; height: 90px; transform: translate(10%, 50%);"/>
+			</div>
+
+      <div class="slide">
+				<img src="src/images/client-1.png" style="height:110px; width: 170px; transform: translate(20%, 35%);"/>
+			</div>
+			
+			<div class="slide">
+				<img src="src/images/client-2.png" style="height:90px; width: 200px; transform: translate(10%, 55%);"/>
+			</div>
+			
+			<div class="slide">
+				<img src="src/images/client-3.png" />
+			</div>
+			
+			<div class="slide">
+				<img src="src/images/client-4.png" style="width: 200px; height: 100px; transform: translate(10%, 50%);"/>
+			</div>
+			
+			<div class="slide">
+				<img src="src/images/client-5.png" style="height:160px; width: 160px; transform: translate(25%, 10%);"/>
+			</div>
+			
+			<div class="slide">
+				<img src="src/images/client-6.png" style="width: 200px; height: 90px; transform: translate(10%, 50%);"/>
+			</div>
+			
+		</div>
+	</div>
+</div> -->
 
     <!-- Expertise -->
     <section class="expertise">
@@ -136,8 +156,8 @@ include_once 'src/includes/header.php';
     </section>
 
     <!-- Porfolio -->
-    <section class="porfolio"id="porfolio">
-        <div class="row">
+    <section class="porfolio"id="porfolio" >
+        <div class="row"  style="padding-top: 5%; margin-bottom: -5%">
             <div class="col-md-12">
                 <div class="site-heading text-center">
                     <h2><span>Portfolio</span></h2>
@@ -176,13 +196,13 @@ include_once 'src/includes/header.php';
           </li>
           <li class="honeycomb-cell honeycomb__placeholder"></li>
         </ul>
-    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br>
     </section>
-
+    <br><br><br><br>
     
     <!-- Services -->
-    <section class="services" id="services">
-      <div class="row">
+    <section style="background-color: white; padding-top: 5%; padding-bottom: 5%">
+    <div class="row">
           <div class="col-md-12">
               <div class="site-heading text-center">
                   <h2><span>Our Services</span></h2>
@@ -190,66 +210,45 @@ include_once 'src/includes/header.php';
               </div>
           </div>
       </div>
-        <div class="row">
-          <div class="col-md-4">
-              <div class="box">
-                  <div class="our-services settings">
-                      <div class="icon"> <img src="https://i.imgur.com/6NKPrhO.png"> </div>
-                      <h4>Training and Certifications</h4>
-                      <p>Training to develop new skills and advance their SESSIONeers There is specialized certification for training, learning and development professionals who are seeking ways to increase business performance through innovative and collaborative training methods</p><br>
-                  </div>
-              </div>
-          </div>
-          <div class="col-md-4">
-              <div class="box">
-                  <div class="our-services speedup">
-                      <div class="icon"> <img src="https://i.imgur.com/KMbnpFF.png"> </div>
-                      <h4>Automation Solutions</h4>
-                      <p>Automated Solutions develops and sells PLC driver and industrial communications software products for industrial communications software products for industrial and process automation.</p><br><br><br>
-                  </div>
-              </div>
-          </div>
-          <div class="col-md-4">
-              <div class="box">
-                  <div class="our-services privacy">
-                      <div class="icon"> <img src="https://i.imgur.com/AgyneKA.png"> </div>
-                      <h4>Robotics</h4>
-                      <p>Robotics is the intersection of science, engineering and technology that produces machines, called robots, that replicate or substitute for human actions.</p><br><br><br><br>
-                  </div>
-              </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-              <div class="box">
-                  <div class="our-services backups">
-                      <div class="icon"> <img src="https://i.imgur.com/vdH9LKi.png"> </div>
-                      <h4>Research and Development</h4>
-                      <p>Research and development include activities that companies undertake to innovate and introduce new products and services. It is often the first stage in the development process.</p><br><br><br>
-                  </div>
-              </div>
-          </div>
-          <div class="col-md-4">
-              <div class="box">
-                  <div class="our-services ssl">
-                      <div class="icon"> <img src="https://i.imgur.com/v6OnUqu.png"> </div>
-                      <h4>Cybersecurity</h4>
-                      <p>Cybersecurity is the application of technologies, processes, and controls to protect systems, networks, programs, devices, and data from cyberattacks.</p><br><br><br><br>
-                  </div>
-              </div>
-          </div>
-          <div class="col-md-4">
-              <div class="box">
-                  <div class="our-services database">
-                      <div class="icon"> <img src="https://i.imgur.com/VzjZw9M.png"> </div>
-                      <h4>Blockchain</h4>
-                      <p>Blockchains are best known for their crucial role in cryptocurrency systems, such as Bitcoin, for maintaining a secure and decentralized record of transactions.</p><br><br><br><br>
-                  </div>
-              </div>
-          </div>
-        </div>
-    </section>
-    <br><br><br><br><br>
+
+    <div class="container">
+  <div class="box box1">
+    <div class="icon"> <img src="src/images/service1.png"> </div>
+    <h2>Training and Certifications</h2>
+    <p>Training to develop new skills and advance their SESSIONeers There is specialized certification for training, learning and development professionals who are seeking ways to increase business performance through innovative and collaborative training methods</p>
+  </div>
+  <div class="box box2">
+    <div class="icon"> <img src="src/images/service2.png"> </div>
+    <h2>Automation<br>Solutions</h2>
+    <p>Automated Solutions develops and sells PLC driver and industrial communications software products for industrial communications software products for industrial and process automation.</p>
+  </div>
+  <div class="box box3">
+    <div class="icon"> <img src="src/images/service3.png"> </div>
+    <h2>Robotics<br><br></h2>
+    <p>Robotics is the intersection of science, engineering and technology that produces machines, called robots, that replicate or substitute for human actions.</p>
+  </div>
+</div>
+
+<div class="container" style="margin-top: 50px">
+  <div class="box box4">
+    <div class="icon"> <img src="src/images/service4.png"> </div>
+    <h2>Research and Development</h2>
+    <p>Research and development include activities that companies undertake to innovate and introduce new products and services. It is often the first stage in the development process.</p>
+  </div>
+  <div class="box box5">
+    <div class="icon"> <img src="src/images/service5.png"> </div>
+    <h2>Cybersecurity<br><br></h2>
+    <p>Cybersecurity is the application of technologies, processes, and controls to protect systems, networks, programs, devices, and data from cyberattacks.</p>
+  </div>
+  <div class="box box6">
+    <div class="icon"> <img src="src/images/service6.png"> </div>
+    <h2>Blockchain<br><br></h2>
+    <p>Blockchains are best known for their crucial role in cryptocurrency systems, such as Bitcoin, for maintaining a secure and decentralized record of transactions.</p>
+  </div>
+</div>
+</section>
+
+    <br><br><br>
 
     <!--Pricing Table-->
     <div id="price">
@@ -355,14 +354,14 @@ include_once 'src/includes/header.php';
   </div>
   <!-- end of price tab-->
 </div>
-<br><br><br><br><br><br><br><br>
+<br><br><br>
 
     <!-- Contact Us -->
-    <div class="row">
+    <!--<div class="row">
           <div class="col-md-12">
               <div class="site-heading text-center">
                   <h2><span>Contact Us</span></h2>
-                  <h4>Get In Touch With Us!</h4>
+                  <h4>Get In Touch</h4>
               </div>
           </div>
       </div>
@@ -402,8 +401,133 @@ include_once 'src/includes/header.php';
                     </form>
             </div>
         </div>
-    </section>
+    </section>-->
     <br><br>
+    <div class="row">
+          <div class="col-md-12">
+              <div class="site-heading text-center">
+                  <h2><span>Contact Us</span></h2>
+                  <h4>Get In Touch</h4>
+              </div>
+          </div>
+      </div>
+    <div class="contact-wrap">
+
+    <div class="contact-in">
+				<iframe src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=Unit%20703%2C%20PARC%20HOUSE%20II%2C%20Epifanio%20de%20los%20Santos%20Ave%2C%20Makati%2C%201212%20Metro%20Manila+(Title)&amp;ie=UTF8&amp;t=&amp;z=10&amp;iwloc=B&amp;output=embed" width="100%" height="auto" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+			</div>
+  
+			<div class="contact-in" style="padding-left: 3%">
+				<h1>Contact Info</h1>
+				<h2><i class="fa fa-phone" aria-hidden="true"></i> Phone</h2>
+				<p>+6398 9893 5647</p>
+				<h2><i class="fa fa-envelope" aria-hidden="true"></i> Email</h2>
+				<p>sales@erovoutika.ph<br>erovoutika@gmail.com</p>
+				<h2><i class="fa fa-map-marker" aria-hidden="true"></i> Address</h2>
+				<p>PARC HOUSE II, Unit 703, Epifanio de los Santos Ave, Makati, 1212 Metro Manila</p>
+				<ul>
+					<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fa fa-google" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+				</ul>
+			</div>
+			<div class="contact-in">
+				<h1 style="color: #0F3695">Drop us a note</h1>
+				<form action="https://formsubmit.co/421a8ad6d7eed491cf8bf4e8c5cfe624" method="POST">
+					<input type="text" placeholder="Full Name" class="contact-in-input">
+					<input type="text" placeholder="Email" class="contact-in-input">
+					<input type="text" placeholder="Subject" class="contact-in-input">
+					<textarea placeholder="Message" class="contact-in-textarea"></textarea>
+					<input type="submit" value="SUBMIT" class="contact-in-btn">
+				</form>
+			</div>
+			
+		</div>
+
+    <br><br><br>
+
+    <div class="wrapper">
+  
+	<div class="slider">
+		<div class="slide-track">
+
+		
+			<div class="slide">
+				<img id="pic1" src="src/images/client-1.png"/>
+			</div>
+			
+			<div class="slide">
+				<img id="pic2" src="src/images/client-2.png"/>
+			</div>
+			
+			<div class="slide">
+				<img id="pic3" src="src/images/client-3.png"/>
+			</div>
+			
+			<div class="slide">
+				<img id="pic4" src="src/images/client-4.png"/>
+			</div>
+			
+			<div class="slide">
+				<img id="pic5" src="src/images/client-5.png"/>
+			</div>
+			
+			<div class="slide">
+				<img id="pic6" src="src/images/client-6.png"/>
+			</div>
+			
+			<div class="slide">
+				<img id="pic1" src="src/images/client-1.png"/>
+			</div>
+			
+			<div class="slide">
+				<img id="pic2" src="src/images/client-2.png"/>
+			</div>
+			
+			<div class="slide">
+				<img id="pic3" src="src/images/client-3.png"/>
+			</div>
+			
+			<div class="slide">
+				<img id="pic4" src="src/images/client-4.png"/>
+			</div>
+			
+			<div class="slide">
+				<img id="pic5" src="src/images/client-5.png"/>
+			</div>
+			
+			<div class="slide">
+				<img id="pic6" src="src/images/client-6.png"/>
+			</div>
+
+      <div class="slide">
+				<img id="pic1" src="src/images/client-1.png"/>
+			</div>
+			
+			<div class="slide">
+				<img id="pic2" src="src/images/client-2.png"/>
+			</div>
+			
+			<div class="slide">
+				<img id="pic3" src="src/images/client-3.png"/>
+			</div>
+			
+			<div class="slide">
+				<img id="pic4" src="src/images/client-4.png"/>
+			</div>
+			
+			<div class="slide">
+				<img id="pic5" src="src/images/client-5.png"/>
+			</div>
+			
+			<div class="slide">
+				<img id="pic6" src="src/images/client-6.png"/>
+			</div>
+			
+		</div>
+	</div>
+</div>
     <?php
     include_once 'src/includes/footer.php';
     ?>

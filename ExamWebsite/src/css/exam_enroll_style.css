@@ -65,3 +65,51 @@
 #multi_step_form .container fieldset.step:not(:first-of-type) {
     display: none;
 }
+
+.payment__container {
+    visibility: hidden;
+    position: absolute;
+    min-width: 100%;
+    min-height: 100vh;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.payment_section {
+    position: sticky;
+    top: 0;
+    
+    backdrop-filter: blur(10px);
+    min-height: 100vh;
+    min-width: 100%;
+    z-index: 999;
+  }
+
+.payment_info__containter {
+    
+}
+  
+.payment_section .payment_info__containter{
+    backdrop-filter: blur(1px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    min-height: auto;
+    max-height: 400px;
+    min-width: 300px;
+    max-width: 350px;
+
+    padding: 25px 15px;
+
+    border-radius: 12px;
+}
+
+.payment_section .payment_info__containter fieldset select{
+    margin: 0 0 20px 0;
+
+}

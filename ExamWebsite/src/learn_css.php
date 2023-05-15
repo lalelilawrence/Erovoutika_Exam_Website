@@ -7,45 +7,28 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha383-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha383-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp3YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css">
+  <link rel="stylesheet" href ="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" type="text/css" href="css/tutorialpage_style.css">
   <title>Document</title>
 </head>
-<style>
-  .task {
-  padding: 30px 20px 60px;
-  border-radius: 10px;
-  background: #2f80fa;
-  position: relative;
-}
+<script>
+window.onscroll=function(){
+	var scrollPos = window.scrollY;
+	var button1 = document.querySelectorAll(".mybutton");
+	for(var i=0; i<button1.length; i++){
+		if(scrollPos > 500){
+			button1[i].style.display="block";
+		}else{
+			button1[i].style.display="none";
+		}
+	}
+};
 
-.task.milestone {
-  background: #D7D0ED;
+function Top(){
+	window.scrollTo(0,0);
 }
-
-.task h2,
-.task strong {
-  color: #1D3461;
-}
-
-.task em {
-  font-style: normal;
-  border-bottom: 1px solid #aaa;
-}
-
-.task .read-more {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-}
-
-.task code {
-  color: #1CAF96;
-}
-p {
-  color: #ffffff;
-}
-
-
-</style>
+</script>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#0F3695">
         <div class="container-fluid">
@@ -56,393 +39,719 @@ p {
             <button><a href="code_editor.php">Live Code Editor</a></button>
         </div>
     </nav>
-
+<div class = "wrapper">
+	<div class="d-flex justify-content-center align-items-center">
+	<img src = "images/css_logo.png" alt ="HTML" class ="img-fluid">
+	 <h1 style="font-weight: bold;">CSS Tutorial </h1>
+</div>
+<br>
+</div>
 <section class="section">
 	<div class="container">
-		<div class="tile is-ancestor">
-			<div class="tile is-parent">
+	<div class="tile is-ancestor">
+			<div class=" pages tile is-parent">
 				<article class="tile is-child content task">
-				<p><a href="" class="tag is-dark">1 min read</a></p>
-					<h2 class="title">HTML Tutorial</h2>
-					<!-- <p class="description">If you are new in learning HTML, then you can learn HTML from basic to a professional level and after learning HTML with CSS and Javascript you will be able to create your own interactive and dynamic website. But Now We Will focus on HTML only in this tutorial.</p><br>
-					<blockquote>
-					<p class="notes"><strong>Major Points of HTML</strong><ul>
-						<li>HTML stands for <strong>HyperText Markup Language</strong>.</li>
-						<li>HTML is used to create web pages and web applications.</li>
-						<li>HTML is widely used language on the web.</li>
-						<li>We can create a static website by HTML only.</li>
-						<li>Technically, HTML is Markup language rather than a programming language.</li>
-					</ul></p></blockquote> -->
-					<a class="button is-link read-more">View Example</a>
+					<div class="TBC is-responsive">
+						<h1 class="text-center is-light is-responsive" id="contents">Table Of Contents</h1>
+						</div>
+							<div class ="lits is-responsive text-center">
+								<ul class="lits is-hoverable">
+								<li><a href ="#CSS_Tutorial">CSS Tutorial</a></li>
+								<li><a href ="#CSS_definition"> What is CSS?</a></li>
+								<li><a href ="#css_syntax">CSS Syntax</a></li>
+								<li><a href ="#css_selectors">CSS Selectors</a></li>
+								<li><a href ="#css_id_selector"> CSS id Selector</a></li>
+								<li><a href ="#css_class_selector">CSS Class Selector</a></li>
+								<li><a href ="#css_universal_selector">CSS Universal Selector</a></li>
+								<li><a href ="#css_grouping_selector">CSS Grouping Selector</a></li>
+								<li><a href ="#css_colors">CSS Colors</a></li>
+								<li><a href ="#css_backgrounds">CSS Backgrounds</a></li>
+								<li><a href ="#css_background-image">CSS background-image</a></li>
+								<li><a href ="#css_borders">CSS Borders</a></li>
+								<li><a href ="#css_margins">CSS Margins</a></li>
+								<li><a href ="#css_paddings">CSS Paddings</a></li>
+								<li><a href ="#css_height_width_and_max_width">CSS Height, Width and Max-Width</a></li>
+								<li><a href ="#css_height_and_width_values">CSS Height and Width Values</a></li>
+								<li><a href ="#css_box_model">CSS Box Model</a></li>
+								<li><a href ="#three_ways_to_insert_css">Three ways to Insert CSS</a></li>
+								<li><a href ="#inline_css">Inline CSS</a></li>
+								<li><a href ="#external_css">External CSS</a></li>
+								<li><a href ="#internal_css">Internal CSS</a></li>
+								</ul>
+							</div>
 				</article>
 			</div>
-			<div class="tile is-parent">
-				<article class="tile is-child content task">
-					<p><a href="" class="tag is-dark">2 min read</a></p>
-					<h2 class="title">What is HTML</h2>
-					
-					<!-- <blockquote>HTML is an acronym which stands for<strong> Hyper Text Markup Language</strong>
-					<br><br>
-					<strong>Hyper Text:</strong> Hypertext simply means "Text within Text." A text has a link within it, is a hypertext. Whenever you click on a link which brings you to a new webpage, you have clicked on a hypertext. Hypertext is a way to link two or more web pages (HTML documents) with each other. <br><br>
-					<strong>Markup language:</strong> A markup language is a computer language that is used to apply layout and formatting that is used to apply layout and formatting conventions to a text document. Markup language makes text more interactive and dynamic. It can turn to text into images, tables, links, etc. <br><br>
-					<strong>Web Page:</strong> A web page is a document which is commonly written in HTML and translated by a web browser. A web page can be identified by entering URL. A web page can be static or dynamic type. <strong>With the help of HTML only, we can create static web pages.</strong>	</blockquote> -->
-					<a class="button is-link read-more">View Example</a>
+	</div>
+		<div class="tile is-ancestor">
+			<div class="tile is-6 is-parent">
+			<article class="tile is-child content task">
+				<p><a href="" class="tag is-dark">1 min read</a></p>
+					<h2 class="title" id="CSS_Tutorial">CSS Tutorial</h2>
+					<blockquote><ul>
+						<li>CSS is the language we use to style an HTML document.</li>
+						<li>CSS sketches how HTML elements should be displayed.</li>
+						<li>This tutorial will teach you to understand CSS from basic to advanced.</li>
+					</ul></blockquote>
+					<form method = "get" action = "code_editor.php">
+						<input type = "hidden" name = "learn_css" value = "0">
+						<button class="button is-link read-more">View Example</button>
+					</form>
+				</article>
 			</div>
-			<div class="tile is-parent">
-				<article class="tile is-child content task">
+			<div class="tile is-6 is-parent ">
+			<article class="tile is-child content task">
 					<p><a href="" class="tag is-dark">2 min read</a></p>
-					<h2 class="title">HTML Text Editors</h2>
-					<!-- <blockquote><p class="notes">
-						<ul>
-							<li>An HTML file is a text file, so to create an HTML file we can use any text editors</li>
-							<li>Text editors are the programs which allow editing in a written, text, hence to create a web page we need to write our code in some text editor.</li>
-							<li>There are various types of text editors available which you can directly download, but for a beginner, the best text editor is Notepad (Window) or Text Edit (Mac)</li>
-							<li>After learning the basic, you can easily use other professional text editors which are,<strong> Notepad++, Sublime Text, VS Code, etc.</strong></li>
-						</ul>
-					</p></blockquote>
-					<br><br>
-					<p class="notes"><strong>Notes:</strong><br> Notepad is a simple text editor and suitable for beginners to learn HTML. It is available in all versions of Windows, from where you easily access it.</p> -->
-					<a class="button is-link read-more">View Example</a>
+					<h2 class="title" id="css_definition">What is CSS?</h2>
+					<blockquote><ul>
+						<li>CSS stands for Cascading Style Sheets</li>
+						<li>CSS describes how HTML elements could be displayed on screen, paper, or in other media</li>
+						<li>CSS saves a lot of work. It can control the layout of multiple web pages all at once</li>
+						<li>External stylesheets are stored in CSS files</li>
+					</ul></blockquote>
+
+					<form method = "get" action = "code_editor.php">
+						<input type = "hidden" name = "learn_css" value = "1">
+						<button class="button is-link read-more">View Example</button>
+					</form>
+			</article>
+			</div>
+		</div>
+			<div class ="tile is-ancestor">
+			<div class="tile is-parent">
+			<article class="tile is-child content task">
+					<p><a href="" class="tag is-dark">2 min read</a></p>
+					<h2 class="title" id ="css_syntax">CSS Syntax</h2>
+					<p class="description">A CSS rule consists of a selector and a declaration block.</p>
+					<center><img src="images/CSS_SyNtax.png" alt="Example1"></center>
+					<p class="description">An example of this working is:					
+					<ul>
+						<li>The selector points to the HTML element you want to style.</li>
+						<li>The declaration block contains one or more declarations separated by semicolons.</li>
+						<li>Each declaration includes a CSS property name and a value, separated by a colon.</li>
+						<li>Multiple CSS declarations are separated with semicolons, and declaration blocks are surrounded by curly braces.</li>
+					</ul>
+					<p class="description">Example</p>
+					<blockquote>
+					<p class="description">p {<br>
+  					color: red;<br>
+  					text-align: center;<br>
+					}</p>
+					</blockquote> 
+					<p class="description">Example Explained</p>
+					<ul>
+						<li>p is a selector in CSS (it points to the HTML element you want to style: &lt;p&gt;).</li>
+						<li>color is a property, and red is the property value</li>
+						<li>text-align is a property, and center is the property value</li>
+					</ul>
+
+					<form method = "get" action = "code_editor.php">
+						<input type = "hidden" name = "learn_css" value = "2">
+						<button class="button is-link read-more">View Example</button>
 					</article>     
-				</div>
 			</div>
-			<div class="tile is-ancestor">
-				<div class="tile is-parent">
-					<article class="tile is-child content task">
-					<p><a href="" class="tag is-dark">1 min read</a></p>
-						<h2 class="title">Building Blocks of HTML</h2>
-						<!-- <p class="description">An HTML document consist of its basic building blocks which are:</p>
-						<blockquote>
+		</div>
+		<div class="tile is-ancestor">
+			<div class="tile is-parent">
+				<article class="tile is-child content task">
+						<p><a href="" class="tag is-dark">2 min read</a></p>
+							<h2 class="title" id="css_selectors">CSS Selectors</h2>
+							<p class="description">CSS selectors are used to "find" (or select) the HTML elements you want to style. </p>
+							<p class = "description">We can divide CSS selectors into five categories:</P>
+							<blockquote>
 							<ul>
-								<li><strong>Tags:</strong> An HTML tag surrounds the content and apply meaning to it. It is written between < and > brackets.</li>
-								<li><strong>Attribute:</strong> An attribute in HTML provides extra information about the element, amd it is applied about the element and it is applied within the start tag. An HTML attribute contains two fields: name & value.</li>
-								<li><strong>Elements</strong> An HTML element is an individual component of an HTML file. I an HTML file, everything written within tags are termed as HTML elements.</li>
-								<center><img src="images/Example1.jpg" alt="Example1"></center>
-							</ul>
-						</blockquote>
-						</p> -->
-						<a class="button is-link read-more">View Example</a>
-					</article>
-				</div>
-				<div class="tile is-parent is-4">
-					<article class="tile is-child content task">
-					<p><a href="" class="tag is-dark">2 min read</a></p>
-						<h2 class="title">HTML Attribute</h2>
-						<!-- <p class="description">HTML attribute are special words which provide additional information about the elements.</p>
-						<blockquote>
-						<strong>The title attribute in HTML</strong><br>
-						<strong>Description:</strong> The attribute is used as text tooltip in most of the browsers. It display its text when user move the cursor over a link or any text. You can use it with any text or link to show the description about that link or text. <br><br>
-						<strong>The href attribute in HTML</strong><br>
-						<strong>Description:</strong> The href attribute is the main attribute of < a > anchor tag. This attribute gives the link address which is specified in that link. <strong>The href attribute provides the hyperlink, and if it is blank, then it will remain in same page.</strong><br><br>
-						<strong>The src Attribute</strong><br>
-						The <strong>src</strong> attribute is one of the important and required attribute of <code>< img ></code> element. It is source for the image which is required to display on browser. This attribute can contain image in same directory or another directory. The image name or source should be correct else browser will not display image.
-						</blockquote>
-						<br> -->
-						
-						<a class="button is-link read-more">View Example</a>
-					</article>
-				</div>
-			</div>
-			<div class="tile is-ancestor">
-				<div class="tile is-parent is-6">
-					<article class="tile is-child content task">
-					<p><a href="" class="tag is-dark">4 min read</a></p>
-						<h2 class="title">HTML Formatting</h2>
-						<!-- <p class="description"><strong>HTML Formatting</strong> is a process of formatting text for better look and feel HTML provides us ability to format text without using CSS. There are many formatting tags in HTML. These tags are used to make text bold, italicized, or underlined</p>
-						<blockquote>
-							In HTML the formatting tags are divided in two categories:
-							<ul>
-								<li><strong>Physical tag:</strong> These tags are used to provide the visual appearance to the text</li>
-								<li><strong>Logical tag:</strong> These tags are used to add some logical or semantic value to the text.</li>
+								<li>Simple selectors (select elements based on name, id, class)</li>
+								<li>Combinator selectors (select elements based on a specific relationship between them)</li>
+								<li>Pseudo-class selectors (select elements based on a certain state)</li>
+								<li>Pseudo-elements selectors (select and style a part of an element)</li>
+								<li>Attribute selectors (select elements based on an attribute or attribute value)</li>
 							</ul>
 							</blockquote>
-						<p class="notes"><strong>List of HTML Formatting text</strong></p>
-						<blockquote>
-							<ol>
-								<li><strong>Bold Text </strong>- The HTML <code>< b ></code> element is a physical tag which display text in bold font, without any logical importance. </li>
-								<li><strong>Italic Text </strong>- The HTML <code>< i ></code> element is a physical element, which display the enclosed content in italic font, without any added importance.</li> 
-								<li><strong>HTML Marked formatting</strong> - If you want or highlight a text, should write the content within <code>< mark > . . . < /mark ></code></li>
-								<li><strong>Underlined Text</strong>- If you write anything within <code>< u > . . . < /u > </code> element, is shown in underlined text.</li> 
-								<li><strong>Strike Text</strong> - Anything written within <code>< strike > . . . < /strike ></code> elements displayed with strikethrough. It is a thin line which cross the statement.</li>
-								<li><strong>Monospaced Font</strong> - If you want that each letter has the same width then you should write the content within <code>< tt > . . . < /tt ></code> element.</li>
-								<li><strong>Superscript Text</strong> - If you put the content within <code>< sup > . . . < /sup ></code> element : means it displayed half a character's height above the other characters.</li>
-								<li><strong>Subscript Text</strong> - If you put the content within <code>< sub > . . . < /sub ></code> element : means it displayed half a character's height below the other characters.</li>
-								<li><strong>Inserted Text</strong> - Anything that puts within <code>< ins > . . . < /ins ></code> is displayed as inserted text.</li>
-								<li><strong>Larger Text</strong> - If you want to put your font size larger than the rest of the text then put the content within <code>< big > . . . < /big ></code>. It increase one font size larger than the previous one.</li>
-								<li><strong>Smaller Text</strong> - If you want to put your font size smaller than the rest of the text then put the content within <code>< small > . . . < /small ></code>. It increase one font size smaller than the previous one.</li>
-							</ol></blockquote> -->
-						<a href="https://github.com/ni4yja/frontloops/tree/master/task-06" class="button is-link read-more">view code</a>
-					</article>
-				</div>
-				<div class="tile is-parent is-6 is-vertical">
-					<article class="tile is-child content task">
-						<p><a href="" class="tag is-dark">CSS pseudo-element</a> <a href="" class="tag is-dark">mobile-first</a> <a href="" class="tag is-dark">blog post</a></p>
-						<h2 class="title">HTML Element</h2>
-						<!-- <p class="description"><strong>Description:</strong> A simple blog post layout made with a mobile-first approach where post's header transforms into a sidebar on large devices. First letter of the post was styles with <code>::first-letter</code>  CSS pseudo-element.</p>
-						<p class="notes"><strong>Notes:</strong> I stand for <em>mobile-first developement</em>, and wrote a <a href="https://medium.com/@ni4yja/youll-never-flex-alone-4f7379db1943">post on Medium</a> in Ukrainian 😂 to show it's advantages. Here is a piece of translation:</p>
-						<blockquote>In general, mobile-first is a path from simple to complex. Therefore, it's simple to grasp and implement. It's much more easier to choose key components and style them step by step.</blockquote> -->
-						<a href="https://github.com/ni4yja/frontloops/tree/master/task-07" class="button is-link read-more">view code</a>
-					</article>
-					<article class="tile is-child content task">
-						<p><a href="" class="tag is-dark">blog post</a> <a href="" class="tag is-dark">fonts</a></p>
-						<h2 class="title">HTML Heading</h2>
-						<!-- <p class="description"><strong>Description:</strong> A nice blog post layout very similar to that from a previous task. The only notable difference is the way I use an image: on small and medium devices it is a full-screen cover and a sidebar cover on large devices.</p>
-						<p class="notes"><strong>Notes:</strong> One more confirmation of how combining fonts make design tasty. Roboto + Playfair Display = 💜</p> -->
-						<a href="https://github.com/ni4yja/frontloops/tree/master/task-08" class="button is-link read-more">view code</a>
-					</article>
-				</div>
-			</div>
-			<div class="tile is-ancestor">
-				<div class="tile is-parent is-5">
-					<div class="tile is-child content task">
-						<p><a href="" class="tag is-dark">button</a> <a href="" class="tag is-dark">web accessibility</a> <a href="" class="tag is-dark">scroll</a> <a href="" class="tag is-dark">scss</a> </p>
-						<h2 class="title">HTML Paragraph</h2>
-						<p class="description"><strong>Description:</strong> Online wallet with a list of cards and income and spendings information. Two scrollable blocks with the hidden scrollbar. Starting from this task I switched to <code>.scss</code>. For this purpose I used <a href="https://github.com/armin-pfaeffle/sass-autocompile">sass-autocompile package</a> for <em>Atom</em>.</p>
-						<p class="notes"><strong>Notes:</strong> In this task I made an icon button in <em>an accessible way</em>:</p>
-						<blockquote cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button">
-							<p>Buttons that only use an icon to represent functionality do not have an accessible name. Accessible names provide a programmatic hook for assistive technology such as screen readers to access when they parse the document and generate an accessibility tree. Assistive technology then uses the accessibility tree to navigate and manipulate page content.</p>
-							<p>To give an icon button an accessible name, supply a string of text for the <code>button</code> element that concisely describe's the button's functionality.</p>
-						</blockquote>
-						<a href="https://github.com/ni4yja/frontloops/tree/master/task-09" class="button is-link read-more">view code</a>
-					</div>
-				</div>
-				<div class="tile is-parent is-7">
-					<div class="tile is-child content task milestone">
-            <p><a href="" class="tag is-dark">landing page</a> <a href="" class="tag is-dark">section</a> <a href="" class="tag is-dark">article</a> <a href="" class="tag is-dark">CSS pseudo-element</a> </p>
-						<h2 class="title">HTML Phrase Tag</h2>
-						<p class="description"><strong>Description:</strong> A fascinating landing page for an Apple Watch. I divided the site's content into four <code>section</code>s and wrapped text information into <code>article</code>s. Some content blocks look like quotes (but they aren't), so I didn't change <code>HTML</code> and simply styled regular paragraphs. As I can see now, I definitely overdo with pseudo-elements when it comes to decorating elements, although it would be better to use a <code>border-left</code> as in <em>this Bulma template.</em></p>
-						<p class="description">In this task, I refused from the traditional CSS reset and switched to <em>Normalize.css</em> for <a href="http://nicolasgallagher.com/about-normalize-css/">better cross-browser consistency in the default styling of HTML elements</a>. Normalize.css saves useful browser setting (like default margins for headers), not erase them, so I saved a lot of time and nerves 😅</p>
-					</p>Besides, I tried to stick to <em>The 7-1 Pattern</em> to keep my SCSS <a href="https://scotch.io/tutorials/aesthetic-sass-1-architecture-and-style-organization">better organized</a>, although I have only five folders (pages and themes are not needed). </p>  
-					<p class="notes"><strong>Notes:</strong> The idea for making this nice hover effect for links is taken from <a href="https://www.30secondsofcode.org/css/s/hover-underline-animation">here</a>. It is the case when a CSS pseudo-element is <em>really</em> needed. This is the first <em>milestone task</em> in this course and I downloaded code to GitHub pages so that you can see it in your browser. Just click a button:</p>
-        <a href="https://ni4yja.github.io/apple-watch/" class="button is-success read-more">visit page</a>
-				</div>
+						
+						<form method = "get" action = "code_editor.php">
+							<input type = "hidden" name = "learn_css" value = "3">
+							<button class="button is-link read-more">View Example</button>
+						</form>
+				</article>
 			</div>
 		</div>
-			<div class="tile is-ancestor">
-				<div class="tile is-parent">
-					<article class="tile is-child content task">
-						<p><a href="" class="tag is-dark">slider</a> <a href="" class="tag is-dark">transform</a> <a href="" class="tag is-dark">javascript</a></p>
-						<h2 class="title">HTML Anchor</h2>
-						<p class="description"><strong>Description:</strong> A nice slider with custom pagination made with <a href="https://swiperjs.com/">Swiper</a>. Button moves on click with a help of <code>transform</code> CSS property.</p>
-						<p class="notes"><strong>Notes:</strong> Starting from this task I pay less attention to css styles and responsive design, but try to implement some javascript solutions to make my tasks more interactive and similar to real world examples.</p>
-						<a href="https://github.com/ni4yja/frontloops/tree/master/task-11" class="button is-link read-more">view code</a>
-					</article>
-				</div>
-				<div class="tile is-parent">
-					<article class="tile is-child content task">
-						<p><a href="" class="tag is-dark">form</a> <a href="" class="tag is-dark">textarea</a></p>
-						<h2 class="title">HTML Image</h2>
-						<p class="description"><strong>Description:</strong> A simple form with four inputs and one textarea. Custom close button is made with CSS pseudo-elements.</p>
-						<p class="notes"><strong>Notes:</strong> The challenge of this task was to make a form container to shrink, when a user stretches the textarea field. The solution was not to set <code>height</code> for the form tab.
-						</p>
-						<a href="https://github.com/ni4yja/frontloops/tree/master/task-12" class="button is-link read-more">view code</a>
-					</article>
-				</div>
-				<div class="tile is-parent">
-					<article class="tile is-child content task">
-						<p><a href="" class="tag is-dark">gradient</a> <a href="" class="tag is-dark">vuejs</a> <a href="" class="tag is-dark">transition</a></p>
-						<h2 class="title">Lists</h2>
-						<p class="description"><strong>Description:</strong> A list of photos opens on arrow button click. A nice background is made with <a href="https://cssgradient.io/">css gradient generator</a>.</p>
-						<p class="notes"><strong>Notes:</strong> Vue provides a variety of ways to apply transition effects when items are inserted, updated, or removed from the DOM. A <code>transition</code> wrapper component allows you to add entering/leaving transitions for any element or component.</p>
-							<a href="https://github.com/ni4yja/frontloops/tree/master/task-13" class="button is-link read-more">view code</a>
-						</article>     
-					</div>
-			</div>
-		<div class="tile is-ancestor">
-				<div class="tile is-parent is-6">
-					<article class="tile is-child content task">
-						<p><a href="" class="tag is-dark">tabs</a> <a href="" class="tag is-dark">vuejs</a> <a href="" class="tag is-dark">z-index</a></p>
-						<h2 class="title">Task #14</h2>
-						<p class="description"><strong>Description:</strong> Beutiful tabs, which show a card in each category: events, finance, cafes, gifts and pets. Here is a short explanation how I did it. </p>
-						<p class="notes"><strong>Notes:</strong> Firstly, I created a list of five elements. Each list item has a link to one of the categories. Secondly, I included Vue to my project with a script tag in my <strong>index.html</strong> and enwrapped my list in a <code>div</code> with <code>id="app"</code>.</p>
-						<p class="notes">Then I copied JavaScript code from this <a href="https://medium.com/@renatello/how-to-create-tabs-in-vue-js-1c313141ae15">tutorial</a> with a small diference: <code>activeItem: 'cafes'</code>. In short, there're to methods: <code>isActive</code> and <code>setActive</code>. The first one returns the currently active tab and the latter sets a new active tab.</p>
-						<p class="notes">After that I edited a link for events with the following attributes: <code>@click.prevent="setActive('events')"</code> and <code>:class="{ active: isActive('events') }"</code>. And repeated the same for four other categories.</p>
-						<p class="notes">Finally, I created a <code>div</code> with id for events to show tab's content with a following attribute: <code>:class="{ 'active show': isActive('events') }"</code>. And - again - repeated the same for finance, cafes, gifts and pets.</p>
-						<p class="notes">One last thing about styling the tab link. I added this line of code <code>transition: transform .6s;</code> to my <code>.tab-link</code>element, which enables transition between inactive and active link. Then I make <code>.tab-link.active</code> grow by adding <code>transform: scale(1.3);</code>. To ensure the animation looks nicely I set <code>z-index</code> for an active link to <code>10</code> (now it is positioned over inactive links with <code>z-index: 1</code>).  </p>
-						<p class="notes">That is basically all. Enjoy!</p>
-						<a href="https://github.com/ni4yja/frontloops/tree/master/task-14" class="button is-link read-more">view code</a>
-					</article>
-				</div>
-				<div class="tile is-parent is-6 is-vertical">
-					<article class="tile is-child content task">
-						<p><a href="" class="tag is-dark">fullpage.js</a> <a href="" class="tag is-dark">clip-path</a></p>
-						<h2 class="title">Task #15</h2>
-						<p class="description"><strong>Description:</strong> An amazing slider made with <a href="https://github.com/alvarotrigo/vue-fullpage.js">vue-fullpage.js</a>. Each slide is a full page with an image as a background. A yellow background is made with this <a href="https://bennettfeely.com/clippy/">CSS clip-path maker</a>.</p>
-						<p class="notes"><strong>Notes:</strong> The <code>clip-path</code> CSS property creates a clipping region that sets what part of an element should be shown. Parts that are inside the region are shown, while those outside are hidden.</p>
-						<blockquote cite="https://www.digitalocean.com/community/tutorials/css-clipping-with-clip-path"><em>Polygon</em> is the most flexible of all the available shapes because it allows you to specify any amount of points, a little bit like an SVG path. The provided points are pairs of X and Y coordinates that can be of any unit (eg: pixel or percent-based). </blockquote>
-						<a href="https://github.com/ni4yja/frontloops/tree/master/task-15" class="button is-link read-more">view code</a>
-					</article>
-					<article class="tile is-child content task">
-						<p><a href="" class="tag is-dark">calendar</a> <a href="" class="tag is-dark">datepicker</a></p>
-						<h2 class="title">Task #16</h2>
-						<p class="description"><strong>Description:</strong> A simple calendar example, which html structure is close to <a href="https://www.npmjs.com/package/vuejs-datepicker">vuejs-datepicker</a>. Each day is a <code>span</code> with a class <code>.cell</code> and <code>.day</code>. The days of the previous month look disabled, today is highlighted. Two more days are highlighted and styled with CSS pseudo-elements. </p>
-						<a href="https://github.com/ni4yja/frontloops/tree/master/task-16" class="button is-link read-more">view code</a>
-					</article>
-				</div>
-			</div>
-		<div class="tile is-ancestor">
-				<div class="tile is-parent">
-					<article class="tile is-child content task">
-						<p><a href="" class="tag is-dark">flexbox</a> <a href="" class="tag is-dark">vuejs</a> <a href="" class="tag is-dark">tabs</a></p>
-						<h2 class="title">Task #17</h2>
-						<p class="description"><strong>Description:</strong> Two-column articles layout done with flexboxes. I made tabs to display article's content the same way as in <em>Task #14</em>. Media kit button includes an icon and changes its background color on hover.</p>
-						<p class="notes"><strong>Notes:</strong> The challenge of this task was to style time container to look as in design. I used flexboxes superpower, and it worked. By the way, here is a funny game to master your flexbox skills - <a href="https://codepip.com/games/flexbox-froggy/">Flexbox Froggy</a>.</p>
-						<a href="https://github.com/ni4yja/frontloops/tree/master/task-17" class="button is-link read-more">view code</a>
-					</article>
-				</div>
-				<div class="tile is-parent">
-					<article class="tile is-child content task">
-						<p><a href="" class="tag is-dark">checkbox</a> <a href="" class="tag is-dark">box-shadow</a></p>
-						<h2 class="title">Task #18</h2>
-						<p class="description"><strong>Description:</strong> An ascetic mobile app mockup. Toggle Buttons are created using pure css with the help of <code>input type="checkbox"</code>. The solution is well explained in <a href="https://csspoints.com/css-toggle-button/">this tutorial</a>.</p>
-						<p class="notes"><strong>Notes:</strong> A small but annoying challenge in this task was to create rounded corners for the mockup. After some stuggling I created two small and round pseudo-elements with transparent background and set it <code>box-shadow: 5px -5px 0 -3px #1f1f1f</code>, and it was exactly what I needed.
-						</p>
-						<a href="https://github.com/ni4yja/frontloops/tree/master/task-18" class="button is-link read-more">view code</a>
-					</article>
-				</div>
-				<div class="tile is-parent">
-					<article class="tile is-child content task">
-						<p><a href="" class="tag is-dark">CSS pseudo-element</a> <a href="" class="tag is-dark">negative margins</a>
-						<h2 class="title">Task #19</h2>
-						<p class="description"><strong>Description:</strong> A navigation app with nothing special about it, but only at first sight. When it comes to styling small elements things quickly become tricky. For instance, to style a destination line I needed three <code>span</code>s and one pseudo-element (to show the distance, which is passed).</p>
-						<p class="notes"><strong>Notes:</strong> In design a map tab goes beyond its parent container. It is easy to make with negative margins.</p>
-							<a href="https://github.com/ni4yja/frontloops/tree/master/task-19" class="button is-link read-more">view code</a>
-						</article>     
-					</div>
-			</div>
-		<div class="tile is-ancestor">
-				<div class="tile is-parent is-5">
-					<div class="tile is-child content task milestone">
-						<p><a href="" class="tag is-dark">desktop</a> <a href="" class="tag is-dark">slider</a> <a href="" class="tag is-dark">material design icons</a> </p>
-						<h2 class="title">Task #20 - Milestone</h2>
-						<p class="description"><strong>Description:</strong> A linkedin-clone page with lots of text, images and small details (with a link to my real linkedin profile as an easter egg 🤩). Header menu items move to top on hover. There are also two components where I use <em>Swiper</em> slider. This is the first time I tried <em>Material Design Icons</em> in my project, and I liked it.</p>
-						<p class="notes"><strong>Notes:</strong> The most challenging in this task was just to start doing it. Plenty of decorative elements made me feel absolutely helpless. But you never know what you can do till you try. So at the end, I've maneged to style everything as designed, doing it step by step. The most difficult, though, was to make a comment bubble. I used pseudo-elements to draw two triangles - big and a smaller one, and made them overlap. </p>
-<p>The other thing was to truncate a string with ellipsis. I didn't invent anything and just followed the recommendations from <a href="https://css-tricks.com/snippets/css/truncate-string-with-ellipsis/">this tutorial</a>.</p>
-						<a href="https://github.com/ni4yja/frontloops/tree/master/task-20" class="button is-link read-more">view code</a>
-					</div>
-				</div>
-				<div class="tile is-parent is-7">
-					<div class="tile is-child content task">
-            <p><a href="" class="tag is-dark">flexbox</a> <a href="" class="tag is-dark">negative margins</a></p>
-						<h2 class="title">Task #21</h2>
-						<p class="description"><strong>Description:</strong> A product page made with flexboxes. An image tab goes beyond its parent container. And again it was done with negative margins. A product image is positioned absolutely.</p>
-					<p class="notes"><strong>Notes:</strong> It's amazing how quickly flexbox has become indispensable in front-end development. Here are some of the most common cases when flexbox is useful:</p>
-						<blockquote cite="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox">
+		<div class="tile  is-ancestor">
+			<div class="tile  is-parent">
+				<article class="tile is-child content task">
+						<p><a href="" class="tag is-dark">2 min read</a></p>
+							<h2 class="title" id="css_id_selector">CSS id Selector</h2>
 							<ul>
-								<li>Vertically centering a block of content inside its parent.</li>
-								<li>Making all the children of a container take up an equal amount of the available width/height, regardless of how much width/height is available.</li>
-								<li>Making all columns in a multiple-column layout adopt the same height even if they contain a different amount of content.</li>
+								<li>The id selector uses the id attribute of an HTML element to select a specific element.</li>
+								<li>The id of an element is unique within a page, so the id selector is used to select one unique element!</li>
+								<li>To select an element with a specific id, write a hash (#) character, followed by the id of the element. </li>
+								
 							</ul>
-						</blockquote>
-        <a href="https://github.com/ni4yja/frontloops/tree/master/task-21" class="button is-link read-more">view code</a>
-				</div>
+							<p class = "description">Example</P>
+							<blockquote><p class = "description">
+							&lt;!DOCTYPE html&gt;<br>
+							&lt;html&gt;<br>
+							&lt;head&gt;<br>
+							&lt;style&gt;<br>
+							#para1 { <br>
+							text-align: center;<br>
+							color: red;<br>
+							}<br>
+							&lt;/style&gt; <br>
+							&lt;/head&gt;<br>
+							&lt;body&gt;<br>
+							&lt;p id="para1"&gt;Hello World!&lt;/p&gt;<br>
+							&lt;p&gt;This paragraph is not affected by the style. &lt;/p&gt;<br>
+							&lt;/body&gt;<br>
+							&lt;/html&gt;</p>
+							</blockquote>
+						<form method = "get" action = "code_editor.php">
+							<input type = "hidden" name = "learn_css" value = "4">
+							<button class="button is-link read-more">View Example</button>
+						</form>
+				</article>
 			</div>
 		</div>
+						
 		<div class="tile is-ancestor">
-				<div class="tile is-parent">
-					<article class="tile is-child content task">
-						<p><a href="" class="tag is-dark">CSS Grid</a></p>
-						<h2 class="title">Task #22</h2>
-						<p class="description"><strong>Description:</strong> A gallery page with beautiful black and white images.</p>
-						<p>Starting from this task things are getting more complicated. I've found <em>zathio github profile</em> with <a href="https://github.com/zathio/frontloops-challenges">completed challenges</a>, and copied some solutions from there.</p>
-						<p class="notes"><strong>Notes:</strong> This is the first time I used grids, and it was awesome 💚</p>
-						<blockquote cite="https://css-tricks.com/snippets/css/complete-guide-grid">
-							CSS Grid Layout is the most powerful layout system available in CSS. It is a 2-dimensional system, meaning it can handle both columns and rows, unlike flexbox which is largely a 1-									dimensional system. You work with Grid Layout by applying CSS rules both to a parent element (which becomes the Grid Container) and to that element’s children (which become Grid Items).
-						</blockquote>
-						<a href="https://github.com/ni4yja/frontloops/tree/master/task-22" class="button is-link read-more">view code</a>
+		<div class="tile is-parent">
+		<article class="tile is-child content task">
+					<p><a href="" class="tag is-dark">4 min read</a></p>
+						<h2 class="title" id="css_class_selector">CSS class Selector</h2>
+						<p class="description">The class selector selects HTML elements with a specific class attribute. To select elements with a specific class, write a period (.) character, followed by the class name.
+</p>
+						<p class="description">Example</p>
+						<blockquote>
+						<p class="description">&lt;!DOCTYPE html&gt;<br>
+						&lt;html&gt;<br>
+						&lt;head&gt;<br>	
+						&lt;style&gt;<br>
+						.center { <br>
+							text-align: center;<br>
+							color: red; <br>
+						}<br>
+						&lt;/style&gt;<br>
+						&lt;/head&gt;<br>
+						&lt;body&gt;<br>
+						&lt;h1 class="center"&gt;Red and center-aligned heading&lt;/h1&gt; <br>
+						&lt;p class="center"&gt;Red and center-aligned paragraph.&lt;/p&gt;<br>
+						&lt;/body&gt;<br>
+						&lt;/html&gt;<br>
+					<form method = "get" action = "code_editor.php">
+						<input type = "hidden" name = "learn_css" value = "5">
+						<button class="button is-link read-more">View Example</button>
+					</form>
+		</article>
+
+		</div>
+		</div>
+		<div class ="tile is-ancestor">
+			<div class="tile is-parent ">
+			<article class="tile is-child content task">
+					<p><a href="" class="tag is-dark">4 min read</a></p>
+						<h2 class="title" id="css_universal_selector">The CSS Universal Selector</h2>
+						<p class="description">The universal selector (*) selects all HTML elements on the page.</p>
+						<p class="description">Example</p>
+						<blockquote>
+							<p class="description">
+							&lt;!DOCTYPE html &gt;<br>
+							&lt;html&gt;<br>
+							&lt;head&gt;<br>
+							&lt;style&gt;<br>
+							* {<br>
+								text-align: center;<br>
+								color: blue;<br>
+							}<br>
+							&lt;/style&gt;<br>
+							&lt;/head&gt;<br>
+							&lt;body&gt;<br>
+							&lt;h1&gt;Hello World!&lt;/h1&gt;<br>
+							&lt;p&gt;Every element on the page will be affected by the style.&lt;/p&gt;<br>
+							&lt;p id="para1"&gt;Me too!&lt;/p&gt;<br>
+							&lt;p&gt;And me!&lt;/p&gt;
+							&lt;/body&gt;<br>
+							&lt;/html&gt;<br>
+						</p>	</blockquote>
+
+						<form method = "get" action = "code_editor.php">
+							<input type = "hidden" name = "learn_css" value = "6">
+							<button class="button is-link read-more">View Example</button>
+						</form>
 					</article>
-				</div>
+			</div>
+		</div>
+			<div class="tile is-ancestor">
 				<div class="tile is-parent">
-					<article class="tile is-child content task">
-						<p><a href="" class="tag is-dark">animation</a> <a href="" class="tag is-dark">web accessibility</a></p>
-						<h2 class="title">Task #23</h2>
-						<p class="description"><strong>Description:</strong> Movie cards, which content reveals on hover.</p>
-						<p class="notes"><strong>Notes:</strong> After styling a <code>div</code> with movie's details, I hid it with <code>transform: scale(0)</code>. It appears on hover with <code>transform: scale(1);</code> and <code>animation: bounce .4s backwards;</code>. To make the appearance more smoothly I used <code>transition: transform .15s;</code>. </p>
-						<p>When using animation you should keep in mind the following:</p>
-							<blockquote cite="https://developer.mozilla.org/en-US/docs/Web/CSS/animation">
-							Blinking and flashing animation can be problematic for people with cognitive concerns such as Attention Deficit Hyperactivity Disorder (ADHD). Additionally, certain kinds of motion can be a trigger for Vestibular disorders, epilepsy, and migraine and Scotopic sensitivity.
-						</blockquote>
-						<a href="https://github.com/ni4yja/frontloops/tree/master/task-23" class="button is-link read-more">view code</a>
-					</article>
+				<article class="tile is-child content task">
+						<p><a href="" class="tag is-dark">2 min read</a></p>
+							<h2 class="title" id="css_grouping_selector">CSS Grouping Selector</h2>
+							<p class="description">The grouping selector selects all the HTML elements with the same style definitions.
+						<br>Look at the following CSS code (the h1, h2, and p elements have the same style definitions):
+						</P>
+						<p class="description">Example</p>		
+						<blockquote><p class="description">
+						&lt;!DOCTYPE html &gt;<br>
+							&lt;html&gt;<br>
+							&lt;head&gt;<br>
+							&lt;style&gt;<br>
+							h1, h2, p {<br>
+								text-align: center;<br>
+								color: red;<br>
+							}<br>
+							&lt;/style&gt;<br>
+							&lt;/head&gt;<br>
+							&lt;body&gt;<br>
+							&lt;h1&gt;Hello World!&lt;/h1&gt;<br>
+							&lt;h2&gt;Smaller heading!&lt;/h2&gt;<br>
+							&lt;p&gt;This is a paragraph.&lt;/p&gt;<br>
+							&lt;/body&gt;<br>
+							&lt;/html&gt;<br>
+						</blockquote></p>	
+
+						<form method = "get" action = "code_editor.php">
+							<input type = "hidden" name = "learn_css" value = "7">
+							<button class="button is-link read-more">View Example</button>
+						</form>
+				</article>
 				</div>
-				<div class="tile is-parent">
-					<article class="tile is-child content task">
-						<p><a href="" class="tag is-dark">perspective</a>
-						<h2 class="title">Task #24</h2>
-						<p class="description"><strong>Description:</strong> An album cover with an unusual hover effect (it seems like you're turning a page).</p>
-						<p class="notes"><strong>Notes:</strong> An album cover container contains of two <code>div</code>s, which take half of its width each. Then with <code>background-position</code> property I make them look like two parts of one image. </p>
-						<p>The second <code>div</code> gets some additional styling: <code>transform-style: preserve-3d;</code> and <code>transform-origin: left;</code> - that allows it to shrink to left. With <code>transition: .2s;</code> the shrinking looks neat and smooth.</p>
-						<p>Finally, with <code> perspective: 1900px;</code> I give the album cover container some perspective (remember, the smaller its value is, the deeper the perspective is). That is actually it!</p>
-							<a href="https://github.com/ni4yja/frontloops/tree/master/task-24" class="button is-link read-more">view code</a>
-						</article>     
-					</div>
 			</div>
 		<div class="tile is-ancestor">
 				<div class="tile is-parent">
-					<article class="tile is-child content task">
-						<p><a href="" class="tag is-dark">svg</a> <a href="" class="tag is-dark">overflow</a></p>
-						<h2 class="title">Task #25</h2>
-						<p class="description"><strong>Description:</strong> A tab with charts - columns and a circle. Circle is drawn with svg. Columns look cut because charts container has fixed width and <code>overflow: hidden;</code>.</p>
-						<p class="notes"><strong>Notes:</strong> Scalable Vector Graphics (SVG) is a 2D vector image format based on an XML syntax.</p>
-						<blockquote cite="https://developer.mozilla.org/en-US/docs/Glossary/SVG">
-							The W3C began work on SVG in the late 1990s, but SVG only became popular when <em>Internet Explorer 9</em> came out with SVG support. All major browsers now support SVG.
-Based on an XML syntax, SVG can be styled with CSS and made interactive using JavaScript. HTML5 now allows direct embedding of SVG tags in an HTML document.
-						</blockquote>
-						<a href="https://github.com/ni4yja/frontloops/tree/master/task-25" class="button is-link read-more">view code</a>
-					</article>
+				<article class="tile is-child content task">
+						<p><a href="" class="tag is-dark">2 min read</a></p>
+							<h2 class="title" id="css_colors">CSS Colors</h2>
+							<p class="description">Colors are specified using predefined color names, or RGB, HEX, HSL, RGBA, HSLA values.</P>
+							<p class="description"> Example</p>
+							<blockquote>
+							<p class="description">
+						&lt;!DOCTYPE html &gt;<br>
+							&lt;html&gt;<br>
+							&lt;head&gt;<br>
+							&lt;body&gt;<br>
+							&lt;h3 style="color:Tomato;"&gt;Hello World&lt;/h3&gt;<br>
+							&lt;p style="color:DodgerBlue; background-color:rgb(255, 99, 71);"&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.&lt;/p&gt;<br>
+							&lt;p style="color:MediumSeaGreen;"&gt;Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.&lt;/p&gt;<br>
+							&lt;/body&gt;<br>
+							&lt;/html&gt;<br>
+							</p></blockquote>
+						<form method = "get" action = "code_editor.php">	
+							<input type = "hidden" name = "learn_css" value = "8">
+							<button class="button is-link read-more">View Example</button>
+						</form>
+				</article>
 				</div>
-				<div class="tile is-parent">
-					<article class="tile is-child content task">
-						<p><a href="" class="tag is-dark">CSS Grid</a> <a href="" class="tag is-dark">form</a> <a href="" class="tag is-dark">mobile-first</a></p>
-						<h2 class="title">Task #26</h2>
-						<p class="description"><strong>Description:</strong> Responsive payment page made with CSS Grid. On mobile sections go one after another, but on desktop the layout is more complex. Here is a short explanation how it is done.</p>
-						<p class="notes"><strong>Notes:</strong> A div with class <code>.order-wrapper</code> is a Grid Container, which embraces four child elements. On desktop it has two columns (<code>grid-template-columns: 60% calc(40% - 1.85rem);</code>) and three rows. Grid item with class <code>.order-details</code>, which on mobile takes the first row, goes to the right column on desktop with <code>grid-column: 2 / 3;</code>. The second grid item (<code>.payement-information</code>) goes next with <code>grid-row: 1 / 2;</code> and the third (<code>.billing address</code>) takes the second row automatically. Finally, the last grid item <code>.buttons-box</code> takes the third row with <code>grid-column: 1 / 2;</code>.  </p>
-						<a href="https://github.com/ni4yja/frontloops/tree/master/task-26" class="button is-link read-more">view code</a>
-					</article>
-				</div>
-				<div class="tile is-parent">
-					<article class="tile is-child content task">
-						<p><a href="" class="tag is-dark">CSS Grid</a> <a href="" class="tag is-dark">transform</a> <a href="" class="tag is-dark">web accessibility</a> </p>
-						<h2 class="title">Task #27</h2>
-						<p class="description"><strong>Description:</strong> A fascinating page to buy cinema tickets. Seats and row numbers are orginized with CSS Grid. Visual effects are made with <code>transform</code> CSS property.</p>
-						<p class="notes"><strong>Notes:</strong> The <code>transform</code> CSS property lets you rotate, scale, skew, or translate an element. It is a powerful tool, although there may be some issues:</p>
-						<blockquote cite="https://developer.mozilla.org/en-US/docs/Web/CSS/transform">
-							Scaling/zooming animations are problematic for accessibility, as they are a common trigger for certain types of migraine. If you need to include such animations on your website, you should provide a control to allow users to turn off animations, preferrably site-wide.
-						</blockquote>
-						<a href="https://github.com/ni4yja/frontloops/tree/master/task-27" class="button is-link read-more">view code</a>
-						</article>     
-					</div>
-			</div>
+		</div>
 		<div class="tile is-ancestor">
-				<div class="tile is-parent">
-					<article class="tile is-child content task">
-						<p><a href="" class="tag is-dark">CSS pseudo-element</a></p>
-						<h2 class="title">Task #28</h2>
-						<p class="description"><strong>Description:</strong> A fancy news tab with some text, image and icons. A text block is shadowed. An image is beautifully darkened.</p>
-						<p class="notes"><strong>Notes:</strong> Visual effects are done with the help of pseudo-elements. Firstly, a video preview container gets its <code>::after</code>, which is positioned absolutely and takes its parent's width and height, with gradient background. Secondly, a text block has the similar <code>::after</code>, which is also positioned absolutely and takes its parent's width and height, but this time it has a <code>box-shadow</code> with <code>inset</code> value. </p>
-						<a href="https://github.com/ni4yja/frontloops/tree/master/task-28" class="button is-link read-more">view code</a>
-					</article>
+		<div class="tile  is-6 is-parent">
+				<article class="tile is-child content task">
+						<p><a href="" class="tag is-dark">2 min read</a></p>
+							<h2 class="title" id="css_backgrounds">CSS Backgrounds</h2>
+							<p class="description">The CSS background properties are used to add background effects for elements.</P>
+						<blockquote><p class="description">
+						&lt;!DOCTYPE html &gt;<br>
+							&lt;html&gt;<br>
+							&lt;head&gt;<br>
+							&lt;style&gt;<br>
+							    body {<br>
+								background-color: lightblue;<br>
+								}<br>
+							&lt;/style&gt;<br>
+							&lt;/head&gt;<br> 
+							&lt;body&gt;<br>
+							&lt;h1&gt;Hello World!&lt;/h1&gt;<br>
+							&lt;p&gt;This page has a light blue background color!&lt;/p&gt;<br>
+							&lt;/body&gt;<br>
+							&lt;/html&gt;</p>
+						</blockquote>
+						<form method = "get" action = "code_editor.php">
+							<input type = "hidden" name = "learn_css" value = "9">
+							<button class="button is-link read-more">View Example</button>
+						</form>
+				</article>
 				</div>
-				<div class="tile is-parent">
-					<article class="tile is-child content task">
-						<p><a href="" class="tag is-dark">flexbox</a></p>
-						<h2 class="title">Task #29</h2>
-						<p class="description"><strong>Description:</strong> A media homepage layout made with flexboxes. There is a header and two media containers with tv schedule and music. The content seems cut because the parent container has fixed width and <code>div</code> with class <code>.content</code> gets <code>overflow: hidden;</code>. A play button apperars on hover.</p>
-						<p class="notes"><strong>Notes:</strong> The progress bar is done i a simple (but not obvious) way. It has a linear-gradient background, which divides the line into dark and light parts.</p>
-						<a href="https://github.com/ni4yja/frontloops/tree/master/task-29" class="button is-link read-more">view code</a>
-					</article>
-				</div>
-				<div class="tile is-parent">
-					<article class="tile is-child content task milestone">
-						<p><a href="" class="tag is-dark">desktop</a> <a href="" class="tag is-dark">animation</a> </p>
-						<h2 class="title">Task 30</h2>
-						<p class="description"><strong>Description:</strong> The final task in the challenge 😈 - an ikea-clone page done both with flexbox and CSS Grid. Lots of images, icons and some texts. A nice hover effect on menu items inspired by <a href="https://paulund.co.uk/css-animation-link-underline">this tutorial</a>. </p>
-						<p class="notes"><strong>Notes:</strong> The tricky issue in this task was to create a pulsing icon animation. The icon consists of an plus icon itself and two bigger circles with no background and white border. Both circles use the same <em>pulsing</em> animation, the only difference is the second one gets an animation-delay. The full explanation you can find <a href="https://www.kirupa.com/animations/creating_pulsing_circle_animation.htm">here</a>.</p>
-						<a href="https://github.com/ni4yja/frontloops/tree/master/task-30" class="button is-link read-more">view code</a>
-						</article>     
-					</div>
-			</div>
-	</div>
+				<div class="tile  is-parent">
+				<article class="tile is-child content task">
+						<p><a href="" class="tag is-dark">2 min read</a></p>
+							<h2 class="title" id="css_background-image">CSS background-image</h2>
+							<p class="description">The background-image property specifies an image to use as the background of an element.
+							By default, the image is repeated so it covers the entire element.
+							</P>
+							<blockquote><p class="description">
+							&lt;!DOCTYPE html &gt;<br>
+							&lt;html&gt;<br>
+							&lt;head&gt;<br>
+							&lt;style&gt;<br>
+							    body {<br>
+								background-image: url("bgdesert.jpg");<br>
+								}<br>
+							&lt;/style&gt;<br>
+							&lt;/head&gt;<br> 
+							&lt;body&gt;<br>
+							&lt;h1&gt;Hello World!&lt;/h1&gt;<br>
+							&lt;p&gt;This text is not easy to read on this background image.&lt;/p&gt;<br>
+							&lt;/body&gt;<br>
+							&lt;/html&gt; </p>
+						</blockquote>
+						<form method = "get" action = "code_editor.php">
+							<input type = "hidden" name = "learn_css" value = "10">
+							<button class="button is-link read-more">View Example</button>
+						</form>
+				</article>
+							</div>	
+							</div>	
+		<div class="tile is-ancestor">
+		<div class="tile  is-parent">
+				<article class="tile is-child content task">
+						<p><a href="" class="tag is-dark">3 min read</a></p>
+							<h2 class="title" id="css_borders">CSS Borders</h2>
+							<p class="description">The CSS border properties allow you to specify the style, width, and color of an element's border.</P>
+							<p class="description">Example</p>
+							<blockquote><p class="description">
+							&lt;!DOCTYPE html &gt;<br>
+							&lt;html&gt;<br>
+							&lt;head&gt;<br>
+							&lt;style&gt;<br>
+							p.dotted {border-style: dotted;}<br>
+							p.dashed {border-style: dashed;}<br>
+							p.solid {border-style: solid;}<br>
+							p.double {border-style: double;}<br>
+							p.groove {border-style: groove;}<br>
+							p.ridge {border-style: ridge;}<br>
+							p.inset {border-style: inset;}<br>
+							p.outset {border-style: outset;}<br>
+							p.none {border-style: none;}<br>
+							p.hidden {border-style: hidden;}<br>
+							p.mix {border-style: dotted dashed solid double;}<br>
+							&lt;/style&gt;<br>
+							&lt;/head&gt;<br> 
+							&lt;body&gt;<br>
+							&lt;h2&gt;The border-style Property&lt;/h2&gt;<br>
+							&lt;p&gt;This property specifies what kind of border to display:&lt;/p&gt;<br>
+							&lt;p class="dotted"&gt;A dotted border.&lt;/p&gt;<br>
+							&lt;p class="dashed"&gt;A dashed border.&lt;/p&gt;<br>
+							&lt;p class="solid"&gt;A solid border.&lt;/p&gt;<br>
+							&lt;p class="double"&gt;A double border.&lt;/p&gt;<br>
+							&lt;p class="groove"&gt;A groove border.&lt;/p&gt;<br>
+							&lt;p class="ridge"&gt;A ridge border.&lt;/p&gt;<br>
+							&lt;p class="inset"&gt;An inset border.&lt;/p&gt;<br>
+							&lt;p class="outset"&gt;An outset border.&lt;/p&gt;<br>
+							&lt;p class="none"&gt;No border.&lt;/p&gt;<br>
+							&lt;p class="hidden"&gt;A hidden border.&lt;/p&gt;<br>
+							&lt;p class="mix"&gt;A mixed border. &lt;/p&gt;<br>
+							&lt;/body&gt;<br>
+							&lt;/html&gt;</p>
+						</blockquote>
+						<form method = "get" action = "code_editor.php">
+							<input type = "hidden" name = "learn_css" value = "11">
+							<button class="button is-link read-more">View Example</button>
+						</form>
+				</article>
+		</div>
+		</div>
+		<div class="tile is-ancestor">
+		<div class="tile  is-parent">
+				<article class="tile is-child content task">
+						<p><a href="" class="tag is-dark">3 min read</a></p>
+							<h2 class="title" id="css_margins">CSS Margins</h2>
+							<p class="description">The CSS margin properties are used to create space around elements, outside of any defined borders.
+With CSS, you have full control over the margins. There are properties for setting the margin for each side of an element (top, right, bottom, and left).
+</P>
+							<p class="description">Example</p>
+							<blockquote><p class="description">
+							&lt;!DOCTYPE html &gt;<br>
+							&lt;html&gt;<br>
+							&lt;head&gt;<br>
+							&lt;style&gt;<br>
+							div { <br>
+							border: 1px solid black;<br>
+							margin-top: 100px;<br>
+							margin-bottom: 100px;<br>
+							margin-right: 150px;<br>
+							margin-left: 80px;<br>
+							background-color: lightblue;<br>
+							}<br>
+							&lt;/style&gt;<br>
+							&lt;/head&gt;<br> 
+							&lt;body&gt;<br>
+							&lt;h2&gt;Using individual margin properties&lt;/h2&gt;<br>
+							&lt;div&gt;This div element has a top margin of 100px, a right margin of 150px, a bottom margin of 100px, and a left margin of 80px.&lt;/div&gt;<br>
+							&lt;/body&gt;<br>
+							&lt;/html&gt;</p>
+						</blockquote>
+						<form method = "get" action = "code_editor.php">
+							<input type = "hidden" name = "learn_css" value = "12">
+							<button class="button is-link read-more">View Example</button>
+						</form>
+				</article>
+		</div>
+		</div>		
+		<div class="tile is-ancestor">
+		<div class="tile  is-parent">
+				<article class="tile is-child content task">
+						<p><a href="" class="tag is-dark">3 min read</a></p>
+							<h2 class="title" id="css_paddings">CSS Padding</h2>
+							<p class="description">Padding is used to create space around an element's content, inside of any defined borders.The CSS padding properties are used to generate space around an element's content, inside of any defined borders. 
+</P>
+							<p class="description">Example</p>
+							<blockquote><p class="description">
+							&lt;!DOCTYPE html &gt;<br>
+							&lt;html&gt;<br>
+							&lt;head&gt;<br>
+							&lt;style&gt;<br>
+							div { <br>
+							border: 1px solid black;<br>
+							background-color: lightblue;<br>
+							padding-top: 50px;<br>
+							padding-right: 30px;<br>
+							padding-bottom: 50px;<br>
+							padding-left: 80px;<br>
+							}<br>
+							&lt;/style&gt;<br>
+							&lt;/head&gt;<br> 
+							&lt;body&gt;<br>
+							&lt;h2&gt;Using individual padding properties&lt;/h2&gt;<br>
+							&lt;div&gt;This div element has a top padding of 50px, a right padding of 30px, a bottom padding of 50px, and a left padding of 80px. &lt;/div&gt;<br>
+							&lt;/body&gt;<br>
+							&lt;/html&gt;</p>
+						</blockquote>
+
+						<form method = "get" action = "code_editor.php">
+							<input type = "hidden" name = "learn_css" value = "13">
+							<button class="button is-link read-more">View Example</button>
+						</form>
+				</article>
+		</div>
+		</div>
+		<div class="tile is-ancestor">
+		<div class="tile  is-parent">
+				<article class="tile is-child content task">
+						<p><a href="" class="tag is-dark">3 min read</a></p>
+							<h2 class="title" id="css_height_width_and_max_width">CSS Height, Width and Max-width</h2>
+							<blockquote><p class="description">The CSS height and width properties are used to set the height and width of an element.<br>
+The CSS max-width property is used to set the maximum width of an element.<br> The height and width properties are used to set the height and width of an element.<br>
+The height and width properties do not include padding, borders, or margins.<br> It sets the height/width of the area inside the padding, border, and margin of the element.
+						</P></blockqoute>
+						<form method = "get" action ="code_editor.php">
+							<input type = "hidden" name = "learn_css" value = "14">
+							<button class="button is-link read-more">View Example</button>
+						</form>
+				</article>
+		</div>
+		</div>
+		<div class="tile is-ancestor">
+		<div class="tile  is-parent">
+				<article class="tile is-child content task">
+						<p><a href="" class="tag is-dark">3 min read</a></p>
+							<h2 class="title" id="css_height_and_width_values">CSS Height and Width Values</h2>
+							<p class="description">The height and width properties may have the following values:</p>
+								
+							<blockquote><ul>
+								<li>auto - This is default. The browser calculates the height and width</li>
+								<li>length - Defines the height/width in px, cm, etc.</li>
+								<li>% - Defines the height/width in percent of the containing block</li>
+								<li>initial - Sets the height/width to its default value</li>
+								<li>inherit - The height/width will be inherited from its parent value</li>
+								</ul>
+							</blockquote>
+
+							<p class="description">Example</p>
+
+							<blockquote><p class="description">
+							&lt;!DOCTYPE html &gt;<br>
+							&lt;html&gt;<br>
+							&lt;head&gt;<br>
+							&lt;style&gt;<br>
+							div { <br>
+								height: 200px;<br>
+								width: 50%;<br>
+								background-color: powderblue;<br>
+							}<br>
+							&lt;/style&gt;<br>
+							&lt;/head&gt;<br> 
+							&lt;body&gt;<br>
+							&lt;h2&gt;Set the height and width of an element&lt;/h2&gt;<br>
+							&lt;div&gt;This div element has a height of 200px and a width of 50%.&lt;/div&gt;<br>
+							&lt;/body&gt;<br>
+							&lt;/html&gt;</p>
+							</blockquote>
+						<form method = "get" action = "code_editor.php">
+							<input type = "hidden" name = "learn_css" value = "15">
+							<button class="button is-link read-more">View Example</button>
+						</form>
+				</article>
+		</div>
+		</div>	
+		<div class="tile is-ancestor">
+		<div class="tile  is-parent">
+				<article class="tile is-child content task">
+						<p><a href="" class="tag is-dark">3 min read</a></p>
+							<h2 class="title" id="css_box_model">CSS Box Model</h2>
+							<p class="description">In CSS, the term "box model" is used when talking about design and layout.
+							The CSS box model is essentially a box that wraps around every HTML element. It consists of:<br>
+							<ul>
+							<li>margins</li> 
+							<li>borders</li> 
+							<li>padding and the actual content.</li></ul>  
+							The image below illustrates the box model:
+							</p>
+							<center><img src="images/CSS_BOX_Model.png" alt="Example1"></center>
+							<p class="description">Example</p>
+							<blockquote><p class="description">
+							&lt;!DOCTYPE html &gt;<br>
+							&lt;html&gt;<br>
+							&lt;head&gt;<br>
+							&lt;style&gt;<br>
+							div { <br>
+								background-color: lightgrey;<br>
+								width: 300px;<br>
+								border: 15px solid green;<br>
+								padding: 50px;<br>
+								margin: 20px;<br>
+							}<br>
+							&lt;/style&gt;<br>
+							&lt;/head&gt;<br> 
+							&lt;body&gt;<br>
+							&lt;h2&gt;Demonstrating the Box Model&lt;/h2&gt;<br>
+							&lt;div&gt;This div element has a height of 200px and a width of 50%.&lt;/div&gt;<br>
+							&lt;p&gt;The CSS box model is essentially a box that wraps around every HTML element. It consists of: borders, padding, margins, and the actual content.&lt;/p&gt;<br>
+							&lt;div&gt;This text is the content of the box. We have added a 50px padding, 20px margin and a 15px green border. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/div&gt;<br>
+							&lt;/body&gt;<br>
+							&lt;/html&gt;</p>
+							</blockquote>
+						
+						<form method = "get" action = "code_editor.php">
+							<input type = "hidden" name = "learn_css" value = "16">
+							<button class="button is-link read-more">View Example</button>
+						</form>
+				</article>
+		</div>
+		</div>
+		<div class="tile is-ancestor">
+		<div class="tile  is-parent">
+				<article class="tile is-child content task">
+						<p><a href="" class="tag is-dark">3 min read</a></p>
+							<h2 class="title" id="three_ways_to_insert_css">Three Ways to Insert CSS</h2>
+							<p class="description">There are three ways of inserting a style sheet:
+							</p>
+							<blockquote>
+								<ul>
+									<li>External CSS</li>
+									<li>Internal CSS</li>
+									<li>Inline CSS</li>
+								</ul>
+							</blockquote>
+				</article>
+		</div>
+		</div>
+		<div class="tile is-ancestor">
+		<div class="tile  is-parent">
+				<article class="tile is-child content task">
+						<p><a href="" class="tag is-dark">3 min read</a></p>
+							<h2 class="title" id="inline_css">Inline CSS</h2>
+							<p class="description">An inline style may be used to apply a unique style for a single element.To use inline styles, add the style attribute to the relevant element. The style attribute can contain any CSS property.
+							</p>
+							<blockquote>
+							<p class="description">
+							&lt;!DOCTYPE html &gt;<br>
+							&lt;html&gt;<br>
+							&lt;body&gt;<br>
+							&lt;h1 style="color:blue;text-align:center;"&gt;This is a heading&lt;/h1&gt;<br>
+							&lt;p style="color:red;"&gt;This is a paragraph.&lt;/p&gt;<br>
+							&lt;/body&gt;<br>
+							&lt;/html&gt;<br>
+							</p>
+							</blockquote>
+
+							<form method = "get" name = "learn_css" action = "code_editor.php">
+								<input type = "hidden" name = "learn_css" value = "17">
+								<button class="button is-link read-more">View Example</button>
+							</form>
+				</article>
+		</div>
+		</div>
+		<div class="tile is-ancestor">
+		<div class="tile  is-parent">
+				<article class="tile is-child content task">
+						<p><a href="" class="tag is-dark">3 min read</a></p>
+							<h2 class="title" id="external_css">External CSS</h2>
+							<p class="description">With an external style sheet, you can change the look of an entire website by changing just one file.Each HTML page must include a reference to the external style sheet file inside the <strong>&lt;link&gt;</strong> element, inside the head section.
+							</p>
+							<p class="description">Example</p>
+							<blockquote>
+							<p class="description">
+							&lt;!DOCTYPE html &gt;<br>
+							&lt;html&gt;<br>
+							&lt;head&gt;<br>
+							&lt;link rel="stylesheet" href="mystyle.css"&gt;<br>
+							&lt;/head&gt;<br>
+							&lt;body&gt;<br>
+							&lt;h1&gt;This is a heading.&lt;/h1&gt;<br>
+							&lt;p&gt;This is a paragraph.&lt;/p&gt;<br>
+							&lt;/body&gt;<br>
+							&lt;/html&gt;<br>
+							<br>
+							<strong>mystyle.css</strong><br>
+							body {<br>
+							background-color: lightblue;<br>
+							}<br>
+							h1 {<br>
+							color: navy;<br>
+							margin-left: 20px;<br>
+							}<br>
+
+							</p>
+							</blockquote>
+
+							<form method = "get" action = "code_editor.php">
+								<input type = "hidden" name = "learn_css" value = "18">
+								<button class="button is-link read-more">View Example</button>
+							</form>
+				</article>
+		</div>
+		</div>
+		<div class="tile is-ancestor">
+		<div class="tile  is-parent">
+				<article class="tile is-child content task">
+						<p><a href="" class="tag is-dark">3 min read</a></p>
+							<h2 class="title" id="internal_css">Internal CSS</h2>
+							<p class="description">An internal style sheet may be used if one single HTML page has a unique style.
+The internal style is defined inside the <strong>&lt;style&gt;</strong> element, inside the head section.
+
+							</p>
+							<p class="description">Example</p>
+							<blockquote>
+							<p class="description">
+							&lt;!DOCTYPE html &gt;<br>
+							&lt;html&gt;<br>
+							&lt;head&gt;<br>
+							&lt;style&gt;<br>
+							body { <br>
+							background-color: linen; <br>
+							}<br>
+							h1 {<br>
+							color: maroon;<br>
+							margin-left: 40px;<br>
+							}<br>
+							&lt;/style&gt;<br>
+							&lt;/head&gt;<br>
+							&lt;body&gt;<br>
+							&lt;h1&gt;This is a heading.&lt;/h1&gt;<br>
+							&lt;p&gt;This is a paragraph.&lt;/p&gt;<br>
+							&lt;/body&gt;<br>
+							&lt;/html&gt;<br>
+							<br>
+							</p>
+							</blockquote>
+
+							<form method = "get" action = "code_editor.php">
+								<input type = "hidden" name = "learn_css" value = "19">
+								<button class="button is-link read-more">View Example</button>
+							</form>
+				</article>
+		</div>
+		</div>									
+		<button class="mybutton button is-large is-responsive" onclick="Top()"><span class="material-symbols-outlined">
+arrow_upward
+</span></buttton>
+	</div>			
 </section>
 
 <footer class="bg-light text-center text-white">

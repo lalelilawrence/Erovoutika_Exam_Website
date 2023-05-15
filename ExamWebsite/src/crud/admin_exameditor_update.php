@@ -36,7 +36,7 @@
                 $clQsType_value = $curr_QA_data[$question_count]['clQsType'];
                 $clQsCorrectAnswer_value = implode(",",$curr_QA_data[$question_count]['clQsCorrectAnswer']);
 
-                $sql_query .= "INSERT INTO `tbQuestion` (
+                $sql_query .= "INSERT INTO `tbquestion` (
                         `clQsID`, 
                         `clExID`, 
                         `clQsBody`, 
@@ -63,7 +63,7 @@
                 $clAsID_value = $curr_QA_data[$question_count]['tbAnswer_data'][$answer_count]['clAsID'];
                 
                 if($answer_modifyType == "2") { // Delete/Nullify Current Existing Answer
-                    $sql_query .= "DELETE FROM `tbAnswer`
+                    $sql_query .= "DELETE FROM `tbanswer`
                         WHERE `clAsID` = '$clAsID_value' AND `clQsID` = '$clQsID_value';
                     ";
                 }
@@ -71,13 +71,13 @@
                     $clAsBody_value = $curr_QA_data[$question_count]['tbAnswer_data'][$answer_count]['clAsBody'];
     
                     if($answer_modifyType == "1") { // Update Current Existing Answer
-                        $sql_query .= "UPDATE `tbAnswer`
+                        $sql_query .= "UPDATE `tbanswer`
                             SET `clAsBody` = '$clAsBody_value' 
                             WHERE `clAsID` = '$clAsID_value' AND `clQsID` = '$clQsID_value';
                         ";
                     }
                     else if($answer_modifyType == "3") { // Add New Answer
-                        $sql_query .= "INSERT INTO `tbAnswer` (
+                        $sql_query .= "INSERT INTO `tbanswer` (
                                 `clAsID`, 
                                 `clQsID`, 
                                 `clAsBody`
@@ -100,7 +100,7 @@
             }
             
             if($question_modifyType == "2") { // Delete/Nullify Current Existing Question
-                $sql_query .= "DELETE FROM `tbQuestion`
+                $sql_query .= "DELETE FROM `tbquestion`
                     WHERE `clQsID` = '$clQsID_value' AND `clExID` = '$clExID_value';
                 ";
             }
@@ -109,7 +109,7 @@
                 $clQsType_value = $curr_QA_data[$question_count]['clQsType'];
                 $clQsCorrectAnswer_value = implode(",",$curr_QA_data[$question_count]['clQsCorrectAnswer']);
 
-                $sql_query .= "UPDATE `tbQuestion`
+                $sql_query .= "UPDATE `tbquestion`
                     SET `clQsBody` = '$clQsBody_value', 
                         `clQsType` = '$clQsType_value', 
                         `clQsCorrectAnswer` = '$clQsCorrectAnswer_value' 
@@ -130,7 +130,7 @@ unset($clQsID_value);
         $examInfo_modifyType = $curr_tbExam_data['modifyType'];
         
         if($examInfo_modifyType == "2") { // Delete/Nullify Current Exam Information
-            $sql_query .= "DELETE FROM `tbExam`
+            $sql_query .= "DELETE FROM `tbexam`
                 WHERE `clExID` = '$clExID_value';
             ";
         }
@@ -138,24 +138,27 @@ unset($clQsID_value);
             $clExName_value = $curr_tbExam_data['clExName'];
             $clExDescription_value = $curr_tbExam_data['clExDescription'];
             $clExInstructions_value = $curr_tbExam_data['clExInstructions'];
+            $clExPrice_value = $curr_tbExam_data['clExPrice'];
             $clExLastEditedBy_value = $curr_tbExam_data['clExLastEditedBy'];
             
             if($examInfo_modifyType == "1") { // Update Current Exam Information
-                $sql_query .= "UPDATE `tbExam`
+                $sql_query .= "UPDATE `tbexam`
                     SET `clExName` = '$clExName_value', 
                         `clExDescription` = '$clExDescription_value', 
-                        `clExInstructions` = '$clExInstructions_value', 
+                        `clExInstructions` = '$clExInstructions_value',
+                        `clExPrice` = '$clExPrice_value',
                         `clExLastEditedBy` = '$clExLastEditedBy_value',
                         `clExLastEditDate` = date_format(now(), '%Y-%m-%d %H:%i:%s')
                     WHERE `clExID` = '$clExID_value';
                 ";
             }
             else if($examInfo_modifyType == "3") { // Add New Exam Information
-                $sql_query .= "INSERT INTO `tbExam` (
+                $sql_query .= "INSERT INTO `tbexam` (
                         `clExID`, 
                         `clExName`, 
                         `clExDescription`, 
-                        `clExInstructions`, 
+                        `clExInstructions`,
+                        `clExPrice`,
                         `clExPublish`, 
                         `clExLastEditedBy`, 
                         `clExPublishedBy`
@@ -164,7 +167,8 @@ unset($clQsID_value);
                         '$clExID_value', 
                         '$clExName_value', 
                         '$clExDescription_value', 
-                        '$clExInstructions_value', 
+                        '$clExInstructions_value',
+                        '$clExPrice_value',
                         0, 
                         '$clExLastEditedBy_value', 
                         null
@@ -176,6 +180,7 @@ unset($clQsID_value);
             unset($clExName_value);
             unset($clExDescription_value);
             unset($clExInstructions_value);
+            unset($clExPrice_value);
             unset($clExLastEditedBy_value);
         }
 
@@ -193,13 +198,15 @@ unset($clQsID_value);
         $clExName_value = $curr_tbExam_data['clExName'];
         $clExDescription_value = $curr_tbExam_data['clExDescription'];
         $clExInstructions_value = $curr_tbExam_data['clExInstructions'];
+        $clExPrice_value = $curr_tbExam_data['clExPrice'];
         $clExLastEditedBy_value = $curr_tbExam_data['clExLastEditedBy'];
 
-        $sql_query .= "INSERT INTO `tbExam` (
+        $sql_query .= "INSERT INTO `tbexam` (
                 `clExID`, 
                 `clExName`, 
                 `clExDescription`, 
-                `clExInstructions`, 
+                `clExInstructions`,
+                `clExPrice`, 
                 `clExPublish`, 
                 `clExLastEditedBy`, 
                 `clExPublishedBy`
@@ -208,7 +215,8 @@ unset($clQsID_value);
                 '$clExID_value', 
                 '$clExName_value', 
                 '$clExDescription_value', 
-                '$clExInstructions_value', 
+                '$clExInstructions_value',
+                '$clExPrice_value', 
                 0, 
                 '$clExLastEditedBy_value', 
                 null
@@ -221,7 +229,7 @@ unset($clQsID_value);
             $clQsType_value = $curr_QA_data[$question_count]['clQsType'];
             $clQsCorrectAnswer_value = implode(",",$curr_QA_data[$question_count]['clQsCorrectAnswer']);
     
-            $sql_query .= "INSERT INTO `tbQuestion` (
+            $sql_query .= "INSERT INTO `tbquestion` (
                     `clQsID`, 
                     `clExID`, 
                     `clQsBody`, 
@@ -241,7 +249,7 @@ unset($clQsID_value);
                 $clAsID_value = $curr_QA_data[$question_count]['tbAnswer_data'][$answer_count]['clAsID'];
                 $clAsBody_value = $curr_QA_data[$question_count]['tbAnswer_data'][$answer_count]['clAsBody'];
 
-                $sql_query .= "INSERT INTO `tbAnswer` (
+                $sql_query .= "INSERT INTO `tbanswer` (
                         `clAsID`, 
                         `clQsID`, 
                         `clAsBody`
@@ -272,6 +280,7 @@ unset($clQsID_value);
         unset($clExName_value);
         unset($clExDescription_value);
         unset($clExInstructions_value);
+        unset($clExPrice_value);
         unset($clExLastEditedBy_value);
     }
     else if($updateType == 2) { // Publish Existing Exam
@@ -279,7 +288,7 @@ unset($clQsID_value);
         $clExPublish_value = $_POST['clExPublish_ajax'];
         $clExPublishedBy_value = $_POST['clExPublishedBy_ajax'];
 
-        $sql_query .= "UPDATE `tbExam`
+        $sql_query .= "UPDATE `tbexam`
             SET `clExPublish` = '$clExPublish_value', 
                 `clExPublishedBy` = '$clExPublishedBy_value', 
                 `clExPublishedDate` = date_format(now(), '%Y-%m-%d %H:%i:%s')

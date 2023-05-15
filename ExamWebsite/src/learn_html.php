@@ -161,13 +161,16 @@ height: 40px;
 						<li>We can create a static website by HTML only.</li>
 						<li>Technically, HTML is Markup language rather than a programming language.</li>
 					</ul></p></blockquote>
-					<a class="button is-link read-more">View Example</a>
+					<form method = "get" action = "code_editor.php">
+						<input type = "hidden" name = "learn_html" value = "8"> <!--This holds the sample's id value -->
+						<button class="button is-link read-more">View Example</a>
+					</form>
 				</article>
 			</div>
 		</div>
 		<div class ="tile is-ancestor">
 			<div class="tile is-6 is-parent ">
-			<article class="tile is-child content task">
+				<article class="tile is-child content task">
 					<p><a href="" class="tag is-dark">2 min read</a>
 					<a href="#contents" class="tag is-link is-pulled-right">Return to Top</a></p>
 					<h2 class="title" id="definition">What is HTML</h2>
@@ -177,7 +180,11 @@ height: 40px;
 					<strong>Hyper Text:</strong> Hypertext simply means "Text within Text." A text has a link within it, is a hypertext. Whenever you click on a link which brings you to a new webpage, you have clicked on a hypertext. Hypertext is a way to link two or more web pages (HTML documents) with each other. <br><br>
 					<strong>Markup language:</strong> A markup language is a computer language that is used to apply layout and formatting that is used to apply layout and formatting conventions to a text document. Markup language makes text more interactive and dynamic. It can turn to text into images, tables, links, etc. <br><br>
 					<strong>Web Page:</strong> A web page is a document which is commonly written in HTML and translated by a web browser. A web page can be identified by entering URL. A web page can be static or dynamic type. <strong>With the help of HTML only, we can create static web pages.</strong>	</blockquote>
-					<a class="button is-link read-more">View Example</a>
+					
+					<form method = "get" action = "code_editor.php">
+						<input type = "hidden" name = "learn_html" value = "9">
+						<button class="button is-link read-more">View Example</button>
+					</form>
 			</div>
 			<div class="tile is-parent">
 			<article class="tile is-child content task">
@@ -194,7 +201,11 @@ height: 40px;
 					</p></blockquote>
 					<br><br>
 					<p class="notes"><strong>Notes:</strong><br> Notepad is a simple text editor and suitable for beginners to learn HTML. It is available in all versions of Windows, from where you easily access it.</p>
-					<a class="button is-link read-more">View Example</a>
+					
+					<form method = "get" action = "code_editor.php">
+						<input type = "hidden" name = "learn_html" value = "10">
+						<button class="button is-link read-more">View Example</button>
+					</form>
 					</article>     
 			</div>
 		</div>
@@ -214,7 +225,11 @@ height: 40px;
 								</ul>
 							</blockquote>
 							</p>
-						<a class="button is-link read-more">View Example</a>
+						<form method = "get" action = "code_editor.php">
+							<input type= "hidden" name = "learn_html" value = "0">
+							<button class="button is-link read-more">View Example</button>
+							<!--<a href = "code_editor.php?id=0"><button class="button is-link read-more">View Example</button></a>-->
+						</form>
 				</article>
 			</div>
 		</div>
@@ -232,9 +247,12 @@ height: 40px;
 						<strong>Description:</strong> The href attribute is the main attribute of < a > anchor tag. This attribute gives the link address which is specified in that link. <strong>The href attribute provides the hyperlink, and if it is blank, then it will remain in same page.</strong><br><br>
 						<strong>The src Attribute</strong><br>
 						The <strong>src</strong> attribute is one of the important and required attribute of <code>< img ></code> element. It is source for the image which is required to display on browser. This attribute can contain image in same directory or another directory. The image name or source should be correct else browser will not display image.
-</blockquote>
-<br>
-						<a class="button is-link read-more">View Example</a>
+						</blockquote>
+						<br>
+						<form method = "get" action = "code_editor.php">
+							<input type= "hidden" name = "learn_html" value = "1">
+							<button class="button is-link read-more">View Example</button>
+						</form>
 					</article>
 			</div>
 		
@@ -266,7 +284,10 @@ height: 40px;
 								<li><strong>Larger Text</strong> - If you want to put your font size larger than the rest of the text then put the content within <code>< big > . . . < /big ></code>. It increase one font size larger than the previous one.</li>
 								<li><strong>Smaller Text</strong> - If you want to put your font size smaller than the rest of the text then put the content within <code>< small > . . . < /small ></code>. It increase one font size smaller than the previous one.</li>
 							</ol></blockquote>
-							<a class="button is-link read-more">View Example</a>
+							<form method = "get" action = "code_editor.php">
+								<input type= "hidden" name = "learn_html" value = "2">
+								<button class="button is-link read-more">View Example</button>
+							</form>
 					</article>
 
 			</div>
@@ -277,7 +298,7 @@ height: 40px;
 					<p><a href="" class="tag is-dark">2 min read</a>
 					<a href="#contents" class="tag is-link is-pulled-right">Return to Top</a></p></p>
 						<h2 class="title" id="element">HTML Element</h2>
-						<p class="description">An HTML file is made of elements. THese elements are responsible for creating web pages and define content in that webpage. AM element in HTML usually consist of a start tag  <code>< tagname ></code>, close tag <code>< /tagname > </code>and content inserted between them. <strong>Technically, an element is a collection of start tag, attributes, end tag, content between them.</strong>
+						<p class="description">An HTML file is made of elements. These elements are responsible for creating web pages and define content in that webpage. AM element in HTML usually consist of a start tag  <code>< tagname ></code>, close tag <code>< /tagname > </code>and content inserted between them. <strong>Technically, an element is a collection of start tag, attributes, end tag, content between them.</strong>
 						<blockquote>
 							<strong>Block-level element:</strong><br>
 							<br>
@@ -292,20 +313,26 @@ height: 40px;
 								<li>The inline elements are ,mostly used with other elements.</li>
 							</ul>
 						</blockquote>
-						<a class="button is-link read-more">View Example</a>
+
+						<form method = "get" action = "code_editor.php">
+							<input type = "hidden" name = "learn_html" value = "11">
+							<button class="button is-link read-more">View Example</button>
+						</form>
 					</article>
 			</div>
 			<div class="tile is-6 is-parent is-vertical">
 			<article class="tile is-child content task">
 					<p><a href="" class="tag is-dark">1 min read</a>
-					<a href="#contents" class="tag is-link is-pulled-right">Return to Top</a>
-				</p>
+						<a href="#contents" class="tag is-link is-pulled-right">Return to Top</a>
+					</p>
 						<h2 class="title" id="heading">HTML Heading</h2>
 						<p class="description">A HTML heading or Html h tag can be defined as a title or a subtitle which you want to display on the webpage. When you place the text within the heading tags <code>< h1 > . . . < /h1 ></code>, it is displayed on the browser in the bold format and size of the text depends on the number of heading. <br><br>
 						There are six different HTML headings which defined with the <code>< h1 ></code> to <code>< h6 ></code>, from highest level h1 (main heading) to the least level h6 (least important heading). <br><br>
 						h1 is the largest heading tag and h6 is the smallest one. So h1 is used for most important heading and h6 is used for least important.</p>
-
-						<a class="button is-link read-more">View Example</a>
+					<form method = "get" action = "code_editor.php">
+						<input type= "hidden" name = "learn_html" value = "3">
+						<button class="button is-link read-more">View Example</button>
+					</form>
 					</article>
 			<article class="tile is-child content task">
 						<p><a href="" class="tag is-dark">form</a> <a href="" class="tag is-dark">textarea</a>
@@ -314,7 +341,11 @@ height: 40px;
 						<p class="description"><strong>Description:</strong> A simple form with four inputs and one textarea. Custom close button is made with CSS pseudo-elements.</p>
 						<p class="notes"><strong>Notes:</strong> The challenge of this task was to make a form container to shrink, when a user stretches the textarea field. The solution was not to set <code>height</code> for the form tab.
 						</p>
-						<a href="https://github.com/ni4yja/frontloops/tree/master/task-12" class="button is-link read-more">View Code</a>
+						<form method = "get" action = "code_editor.php">
+							<input type= "hidden" name = "learn_html" value = "4">
+							<button class="button is-link read-more">View Code</button>
+						</form>
+						<!-- former link: https://github.com/ni4yja/frontloops/tree/master/task-12-->
 					</article>
 			</div>
 		</div>
@@ -332,7 +363,7 @@ height: 40px;
 							</blockquote>
 							<blockquote>
 								<strong>How to Use <code> < br ></code> and <code>< hr ></code> tag with paragraph ?</strong><br><br>
-								An HTML <code>< bt ></code> tag is used for line break and it can be used with paragraph elements. <br><br>
+								An HTML <code>< br ></code> tag is used for line break and it can be used with paragraph elements. <br><br>
 								An HTML <code>< hr ></code> tag is used to apply a horizontal line between two statements or two paragraphs.
 							</blockquote><br>
 							<strong>HTML Display</strong><br>
@@ -340,7 +371,10 @@ height: 40px;
 							Large or small screens, and resized windows will create different results.
 							With HTML, you cannot change the display by adding extra spaces or extra lines in your HTML code.
 							The browser will automatically remove any extra spaces and lines when the page is displayed</p>
-							<a class="button is-link read-more">View Example</a>
+							<form method = "get" action = "code_editor.php">
+								<input type= "hidden" name = "learn_html" value = "5">
+								<button class="button is-link read-more">View Example</button>
+							</form>
 						</div>
 					</article>
 					<div class="tile is-parent is-7">
@@ -363,7 +397,7 @@ height: 40px;
 								<li><strong>Definition tag</strong><br>
 								When you use the <code>< dfn ></code> and <code>< /dfn></code> tags, it allow to specify the keyword of the content.</li>
 								<li><strong>Quoting text</strong><br>
-								The HTML <code>< blockquote ></code> elemet shows that the enclosed xontent is quoted from another source.</li>
+								The HTML <code>< blockquote ></code> elemet shows that the enclosed content is quoted from another source.</li>
 								<li><strong>Short Quotations</strong><br>
 								An HTML <code>< q ></code> . . . <code>< /q ></code> element defines a short quotation, it will enclose the text in double quotes.</li>
 								<li><strong>Code tags</strong><br>
@@ -374,7 +408,10 @@ height: 40px;
 								An HTML <code>< address > </code>tag defines the contact information about the author of the content and it displayed in italic font.</li>
 							</ol>
 						</blockquote>
-						<a class="button is-link read-more">View Example</a>
+						<form method = "get" action = "code_editor.php">
+							<input type= "hidden" name = "learn_html" value = "6">
+							<button class="button is-link read-more">View Example</button>
+						</form>
 				</div>
 			</div>
 		</div>
@@ -391,7 +428,12 @@ height: 40px;
 						<code>< a href = " . . . . . . . . . "> Link</code></blockquote>
 						<blockquote><strong>Specify a location for Link using target attribute</strong><br>
 						If we want to open that link to another page then we can use target attribute of <code>< a ></code> tag. With the help of this link will be open in next page.</blockquote>
-						<a href="https://github.com/ni4yja/frontloops/tree/master/task-11" class="button is-link read-more">View Code</a>
+						
+						<form method = "get" action = "code_editor.php">
+							<input type= "hidden" name = "learn_html" value = "7">
+							<button class="button is-link read-more">View Code</button>
+						</form>
+						<!-- former link: https://github.com/ni4yja/frontloops/tree/master/task-11-->
 					</article>
 			</div>
 			<div class="tile is-parent ">
@@ -401,7 +443,7 @@ height: 40px;
 						<h2 class="title" id="list">Lists</h2>
 						<p class="description"><strong>Description:</strong> A list of photos opens on arrow button click. A nice background is made with <a href="https://cssgradient.io/">css gradient generator</a>.</p>
 						<p class="notes"><strong>Notes:</strong> Vue provides a variety of ways to apply transition effects when items are inserted, updated, or removed from the DOM. A <code>transition</code> wrapper component allows you to add entering/leaving transitions for any element or component.</p>
-							<a href="https://github.com/ni4yja/frontloops/tree/master/task-13" class="button is-link read-more">View Code</a>
+						<button class="button is-link read-more">View Code</button>
 		
 			</div>
 		</div>
@@ -417,7 +459,11 @@ height: 40px;
 							<p class="notes">Finally, I created a <code>div</code> with id for events to show tab's content with a following attribute: <code>:class="{ 'active show': isActive('events') }"</code>. And - again - repeated the same for finance, cafes, gifts and pets.</p>
 							<p class="notes">One last thing about styling the tab link. I added this line of code <code>transition: transform .6s;</code> to my <code>.tab-link</code>element, which enables transition between inactive and active link. Then I make <code>.tab-link.active</code> grow by adding <code>transform: scale(1.3);</code>. To ensure the animation looks nicely I set <code>z-index</code> for an active link to <code>10</code> (now it is positioned over inactive links with <code>z-index: 1</code>).  </p>
 							<p class="notes">That is basically all. Enjoy!</p>
-							<a href="https://github.com/ni4yja/frontloops/tree/master/task-14" class="button is-link read-more">View Code</a>
+
+							<form method = "get" action = "code_editor.php">
+								<input type= "hidden" name = "learn_css" value = "1">
+								<button class="button is-link read-more">View Code</button>
+							</form>
 			</article>				
 			</div>
 		</div>

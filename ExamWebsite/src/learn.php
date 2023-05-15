@@ -33,7 +33,7 @@
 
             <div class="card-container">
               <div class="row pt-5 ml-5 mr-5">
-                <div class="col-md-2 col-lg-4 pb-5">
+                <div class="col-md-6 col-lg-4 pb-5">
 
                   <div class="card card-custom bg-white border-white border-0">
                     <div class="card-custom-img" style="background-image: url(images/tutorial_bg.png);"></div>
@@ -141,7 +141,7 @@
               
                       </div>
                       <div class="card-footer" style="background: inherit; border-color: inherit;">
-                        <a href="#" class="btn btn-primary">Continue</a>
+                        <a href="learnphp.php" class="btn btn-primary">Continue</a>
                         <a href="#" class="btn btn-outline-primary">8 Lectures</a>
                       </div>
                     </div>

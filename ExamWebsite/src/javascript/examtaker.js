@@ -134,9 +134,11 @@ function ans_unans_show(QuestionCount) {
     mainContainer_AnsAnuns.appendChild(divContainer)
     
     for (var i=0; i < QuestionCount; i++){
-        var buttonContainer = document.createElement("button")
+        var buttonContainer = document.createElement("button");
+
         buttonContainer.setAttribute("class", "col-sm cardbtn btn-danger border border-2")
         buttonContainer.setAttribute("type", "button")
+        buttonContainer.setAttribute("id", 'btn'+(i+1)+'')
 
         var testText = document.createTextNode(i+1)
 
@@ -492,11 +494,17 @@ $('#i-div--examtaker-questions-display').on('blur', 'textarea.c-textarea--examta
         if(((new_UserAnswer_data[qa_saveArrayIndex].clUaAnswer).length == 0) && (($(this).val()).length != 0)) { // If Save Array is Empty and Field Content is NOT empty
             new_UserAnswer_data[qa_saveArrayIndex].answerCount++;
             questionAnsweredCount++;
+            button_recolor = document.getElementById("btn"+((qa_saveArrayIndex+1).toString()));
+            button_recolor.removeAttribute("class");
+            button_recolor.setAttribute("class", "col-sm cardbtn btn-primary border border-2")
             setAnsweredCountDisplay();
         }
         else if(((new_UserAnswer_data[qa_saveArrayIndex].clUaAnswer).length != 0) && (($(this).val()).length == 0)) { // If Save Array is NOT Empty and Field Content is empty
             new_UserAnswer_data[qa_saveArrayIndex].answerCount--;
             questionAnsweredCount--;
+            button_recolor = document.getElementById("btn"+((qa_saveArrayIndex+1).toString()));
+            button_recolor.removeAttribute("class");
+            button_recolor.setAttribute("class", "col-sm cardbtn btn-danger border border-2")
             setAnsweredCountDisplay();
         }
         
@@ -529,10 +537,16 @@ $('#i-div--examtaker-questions-display').on('change', 'input.c-inputcheckbox--ex
 
     if((prev_answerCount == 0) && (new_UserAnswer_data[qa_saveArrayIndex].answerCount == 1)) { // If there are Checkboxes checked
         questionAnsweredCount++;
+        button_recolor = document.getElementById("btn"+((qa_saveArrayIndex+1).toString()));
+        button_recolor.removeAttribute("class");
+        button_recolor.setAttribute("class", "col-sm cardbtn btn-primary border border-2")
         setAnsweredCountDisplay();
     }
     else if((prev_answerCount == 1) && (new_UserAnswer_data[qa_saveArrayIndex].answerCount == 0)) { // If there are no Checkboxes checked
         questionAnsweredCount--;
+        button_recolor = document.getElementById("btn"+((qa_saveArrayIndex+1).toString()));
+        button_recolor.removeAttribute("class");
+        button_recolor.setAttribute("class", "col-sm cardbtn btn-danger border border-2")
         setAnsweredCountDisplay();
     }
-});
+}); 

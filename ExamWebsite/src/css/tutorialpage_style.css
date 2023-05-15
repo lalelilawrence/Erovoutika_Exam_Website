@@ -1,0 +1,105 @@
+img{
+	max-width: 100%;
+	max-height: 100%;
+}
+.task {
+  padding: 30px 20px 60px;
+  border-radius: 10px;
+  background: #ffffff;
+  position: relative;
+  border: 3px blue solid;
+}
+title.h3{
+	color:  #1D3461;
+}
+/*.task.milestone {
+  background: #D7D0ED;
+}
+*/
+.task h2,
+.task strong {
+  color: #1D3461;
+}
+
+.task em {
+  font-style: normal;
+  border-bottom: 1px solid #aaa;
+}
+
+.task .read-more {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.task code {
+  color: #1CAF96;
+}
+p {
+  color: black;
+}
+.notes{
+	color: black;
+}
+.wrapper img{
+	margin-top: 2%;
+	max-width: 170px;
+	align-items: center;
+}
+.wrapper h1{
+	font-size: 40px;
+	color: black;
+}
+.content blockquote{
+	background-color: wheat;
+	border-radius: 30px;
+}
+.has-background-custom{
+  padding: 30px 20px 10px;
+  border-radius: 10px;
+  background: #ffffff;
+  position: relative;
+  border: 3px blue solid;
+}
+.no-bullets{
+	list-style-type: none;
+}
+
+.lits{
+	background-color: wheat;
+	border-radius: 10px;
+}
+.lits li{
+	list-style-type: none;
+}
+.lits a{
+	color: black;
+	font-weight: bolder;
+}
+.is-hoverable a:hover{
+	background-color: lightblue;
+}
+.TBC{
+background-color: #0F3695;
+border-radius: 5px;
+}
+.TBC h1{
+	color: white;
+}
+.pages .task{
+	padding: 30px 20px 25px;
+}
+.mybutton{
+	position: fixed;
+	color: #ffffff;
+	right: 20px;
+	bottom: 30px;
+	border-radius: 50%;
+	background-color:#3273dc;
+	border: none;
+	display: none;
+}
+.mybutton:hover{
+	background-color: #0F3695;
+	color: #ffffff;
+}

@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+* {
+    font-family: 'Poppins',sans-serif;
+}
+
+::-webkit-scrollbar {
+    position: absolute;
+    width: 0;
+}
+
+section img {
+    display: block;
+    margin-inline: auto;
+}
+
+span:not(:first-child), div>span {
+    display: block;
+    font-weight: 500;
+
+    margin: 15px 0 0 0;
+    font-size: 1.2rem;
+}
+
+input[type=radio] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;
+}
+
+
+input[type=radio] + img{
+    cursor: pointer;
+
+    display: inline;
+
+    min-width: 10.5rem;
+    min-height: 3.5rem;
+    max-width: 10.5rem;
+    max-height: 5.5rem;
+    
+    /* margin: 5px 0 0 5px; */
+    
+    border-radius: 5px;
+    filter: grayscale(10);
+
+    transition: 250ms ease-in-out filter, 
+                200ms cubic-bezier(0.9, -0.5, 0.5, 0.715) transform;
+
+   object-fit: cover;
+}
+
+input[type=radio]:checked + img {
+    /* outline: solid black 1px; */
+    transform: scale(0.95);
+    filter: none;
+}
+
+.show {
+    display: block !important;
+}
+
+input::placeholder, .form-select option, .form-select  {
+    font-size: .65rem;
+}
+
+form>label, input {
+    font-size: small;
+}
+
+/* CUSTOM BOOTSTRAP */
+
+.c-end {
+    right: 10px;
+}
+
+.c-top {
+    top: 5px;
+}
+
+.rem-s {
+    font-size: .55rem !important;
+}
+
+.f-gap {
+    gap: .20rem;
+}

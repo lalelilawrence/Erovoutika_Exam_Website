@@ -7,20 +7,28 @@
     scroll-behavior: smooth;
 }
 
+*::selection{
+  background:#0F3695;
+  color:#fff;
+}
+
+html{
+  overflow-x: hidden;
+  scroll-padding-top: 6.5rem;
+  scroll-behavior: smooth;
+}
+
 body{
-  min-height: 100vh;
+  background: #f4f5f7;
 }
+
 .section-main{
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  background-size: cover;
-  background-position: center;
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 20px 100px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
+
 header{
   position: fixed;
   top: 0;
@@ -78,6 +86,20 @@ header .menu :is(.basicNav, .userNav) a{
   transition-property: color, background;
 }
 
+
+header .menu .userNav p{
+  font-size: .80rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #170a7d;
+  margin: 0 13px;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  border-radius: 15px;
+  transition: 0.3s;
+  transition-property: color, background;
+}
+
 header.sticky .btn {
   color: #fff;
 }
@@ -90,19 +112,105 @@ header .menu .basicNav {
 
 header .menu .userNav {
   padding: 0 !important;
+  /* display: flex; */
 }
 
 header.sticky .menu a{
   color: #ffffff;
 }
-header .menu a:hover{
-  color: rgb(0, 0, 0);
-  background: #fdfdfd;
+header .menu .basicNav a:hover{
+  color: whitesmoke;
+  background: #170a7d;
 }
-header.sticky .menu a:hover{
+
+header .menu .userNav a:hover:not(:last-child){
+  color: whitesmoke;
+  background: #170a7d;
+}
+
+header.sticky .menu .basicNav a:hover{
   color: #170a7d;
   background: #ffffff;
 }
+
+header.sticky .menu .userNav a:hover:not(:last-child){
+  color: #170a7d;
+  background: #ffffff;
+}
+
+:is(header, header.sticky) .menu .userNav #signupbtn{
+  position: relative;
+  transition: 200ms cubic-bezier(0.68, -0.55, 0.27, 1.55) transform, 
+              100ms cubic-bezier(0.075, 0.82, 0.165, 1) font-size;
+}
+
+:is(header, header.sticky) .menu .userNav #signupbtn:hover{
+  transform: scale(.92);
+  /* font-size: larger; */
+}
+
+.userOptions {
+  /* display: none; */
+  position: absolute;
+
+  top: 60px;
+  left: 82%;
+
+  max-height: 0px;
+
+  width: 150px;
+  /* color: inherit; */
+
+  /* border: solid 1px green; */
+  border-radius: 10px;
+
+  box-shadow: 0px 0px 41px -16px rgba(0,0,0,0.62);
+  transition: max-height 500ms cubic-bezier(0.74,-0.36, 0.95, 1.35), padding 500ms; 
+  
+  overflow: hidden;
+}
+
+header .menu .userNav .userOptions a:hover{
+  color: whitesmoke;
+  background: #170a7d;
+}
+
+header.sticky .menu .userNav .userOptions a:hover{
+  color: #170a7d;
+  background: #ffffff;
+}
+
+
+/* .userOptions > ul {
+  max-height: 0px;
+} */
+
+.userOptions.show-option{
+  /* display: block; */
+  max-height: 194px;
+
+  padding: 10px 0 0 0;
+}
+
+
+header.sticky .menu .userNav .userOptions{
+  background:#0F3695;
+}
+ul {
+  padding-left: 0 !important;
+}
+
+ul li{
+  list-style: none;
+  margin-bottom: 12px;
+  /* padding-left: 0 !important; */
+}
+ul li a{
+  text-decoration: none;
+  color: rgb(3, 1, 1);
+}
+
+
 
 header .btn{
   font-size: 25px;
@@ -110,16 +218,20 @@ header .btn{
   color: #170a7d;
   display: none;
 }
-#loginbtn, #signupbtn{
+#signupbtn{
   background-color: #2600ff;
   color: #fff;
   height: 40px;
   width: 100px;
-  font-weight: 300;
+  font-weight: 600;
   border-radius: 10px;
   text-decoration: none;
   cursor: pointer;
   border: none;
+
+  font-size: .9rem;
+  padding: 0 10px;
+
 }
 @media (max-width: 1024px) {
   header{
@@ -150,16 +262,27 @@ header .btn{
     margin-left: -70px;
   }
   header .btn{
-    display: block;
+    display: block; 
+    padding: 0 !important;
   }
 
+  header .menu.active a{
+    color: #ffffff;
+  }
+
+  header .menu a:hover{
+    color: #170a7d;
+    /* background: #ffffff; */
+  }
+  
+
   header .menu.active{
-    right: 0;
+    right: 0; 
   }
 
   header .menu .userNav {
     /* margin-left: auto; */
-    margin: 0 0 0 10px;
+    margin: 0 0 0 0;
   }
   
 
@@ -169,12 +292,13 @@ header .btn{
     flex-direction: column;
     align-items: flex-start;
     min-width: 400px;
-    height: 100vh;
+    height: 100%;
     top: 0;
     right: -100%;
     padding: 20px 10px;
     transition-property: right;
     transition: 0.5s;
+    justify-content: flex-start;
   }
 
   header .menu .close-btn {
@@ -189,7 +313,7 @@ header .btn{
     display: block;
     font-size: 16px;
     margin: 20px;
-    padding: 0 px;
+    padding: 0;
   }
   #menu-icon{
     margin-right: -250px;
@@ -201,8 +325,53 @@ header .btn{
   }
   #signupbtn{
     align-items: center;
-    width: 70px;
+    width: fit-content;
     height: 35px;
+    padding: 0 10px;
+    margin: 0 0 0 10px;
     /* position: absolute; */
   }
+
+  header .menu .basicNav {
+    margin-top: 50px; 
+  }
+
+  .userOptions {
+  /* display: none; */
+  position: absolute;
+
+  top: 20%;
+  
+  left: -160px;
+
+  min-height: 170px;
+  max-width: 0px;
+
+  width: 150px;
+  color: inherit;
+
+  /* border: solid 1px green; */
+  border-radius: 10px;
+
+  box-shadow: 0px 0px 41px -16px rgba(0,0,0,0.62);
+  transition: max-width 500ms, padding 500ms; 
+  
+  overflow: hidden;
+  }
+
+  .userOptions.show-option{
+    /* display: block; */
+    max-width: 150px;
+  
+    padding: 10px 0 0 0;
+
+    
+  }
+
+  header .menu.active .userNav .userOptions {
+    background:#0F3695;
+
+    /* transition: background 150ms; */
+  }
+
 }

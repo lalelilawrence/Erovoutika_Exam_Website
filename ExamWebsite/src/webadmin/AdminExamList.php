@@ -3,7 +3,7 @@
     include '../includes/connectdb.php';
 	if($_SESSION['admin_sid']==session_id()) {
 	    	// (tbExam)Fetch Exams Data======================================================================(START)
-            $sql_query = "SELECT `clExID`,`clExName`,`clExDescription`,`clExPublish`,`clExLastEditedBy`,`clExPublishedBy` FROM `tbExam`;";
+            $sql_query = "SELECT `clExID`,`clExName`,`clExDescription`,`clExPublish`,`clExLastEditedBy`,`clExPublishedBy` FROM `tbexam`;";
             $fetch_sql_query = mysqli_query($connectdb, $sql_query);
             if($fetch_sql_query){
                 $tbExam_data = null; // Without this, it will likely cause an Error if the table data is empty, which means that it will not go through the loop below, which means that this variable is never declared.
@@ -32,7 +32,7 @@
             // (tbusers)Fetch Users Data======================================================================(END)
 
             //Close Connection
-            //mysqli_close($connectdb);
+            // mysqli_close($connectdb);
 
 
 ?>
@@ -66,75 +66,12 @@
         <script type="text/javascript" src="../javascript/global-scripts.js"></script>
     </head>
 
-    <header class="header shadow" id="header">
-        <div class="header_toggle"> 
-            <i class='bx bx-menu' id="header-toggle"></i> 
-        </div>
-        <div id="i--account--admin">
-            <div class="header_img"> 
-                <a href="AdminHome.php">
-                        <?php
-                            $clUrID = $_SESSION['clUrID'];
-                            $result = mysqli_query($connectdb, "SELECT clUrPhoto from tbusers where clUrID = $clUrID;");
-                            $row = $result->fetch_assoc();
-
-                            if ($row['clUrPhoto'] == ""){
-                                echo '<img src="../images/Display Picture Icon.png" alt="display picture">';
-                            }
-                            else{
-                                echo "<img src='../images/user images/". $row['clUrPhoto'] ."' alt='display picture'>";
-                            }
-                        ?>
-                        <img src="../images/user images/6_Untitleddesign.png" alt="display picture">
-                </a>
-            </div>
-            <div>
-                <button type="button" class="btn ms-4 mt-2">
-                    <a href="../includes/logout.php" class="fw-bold" id="i--button--logout">Logout</a>
-                </button>
-            </div>
-        </div>
-    </header>
+    
 
     <body id="body-pd">
 
-        <!-- SIDE BAR -->
-        <div class="l-navbar" id="nav-bar">
-            <nav class="nav">
-                <div> 
-                    <!-- Admin Home with Logo -->
-                    <a href="AdminHome.php" class="nav_logo"> 
-                        <i>
-                            <img src="../images/Small Logo.png" alt="Erovoutika Logo" id="i--logo--erovoutika">
-                        </i> 
-                        <span class="nav_logo-name fs-5 fw-bold">Erouvotika</span> 
-                    </a>
-                    <div class="nav_list"> 
-                        <a href="AdminHome.php" class="nav_link"> 
-                            <i class='bx bx-grid-alt nav_icon'></i> 
-                            <span class="nav_name">Dashboard</span> 
-                        </a> 
-                        <a href="AdminProfile.php" class="nav_link">
-                            <i class='bx bx-user nav_icon'></i> 
-                            <span class="nav_name">Edit Profile</span> 
-                        </a>
-                        <a href="admin_usertable.php" class="nav_link"> 
-                            <i class='bx bx-table nav_icon'></i>
-                            <span class="nav_name">User Table</span> 
-                        </a> 
-                        <a href="AdminExamList.php" class="nav_link active">
-                            <i class='bx bx-message-square-detail nav_icon'></i> 
-                            <span class="nav_name fw-bold">Exam List</span> 
-                        </a>
-                    </div>
-                </div> 
-                    <a href="adminsignup_template.php"  class="btn btn-primary ms-3 mb-3">
-                        <i class="bi bi-pencil-square"></i> 
-                        <span class="nav_name" id="i--label--signout">Sign Up</span>
-                    </a>
-                </div> 
-            </nav>
-        </div>
+
+        <?php include __DIR__."/AdminNav.php"; ?>
 
         <!--Container Main start-->
         <div class="height-100" id="i--container--mainContent">

@@ -2,7 +2,10 @@
 include '../includes/connectdb.php';
 	if($_SESSION['admin_sid']==session_id())
 	{
-		?>
+        $clUrID = $_SESSION['clUrID'];
+        $result = mysqli_query($connectdb, "SELECT clUrFirstname, clUrLastname, clUrUsername, clUrPhoto from tbusers where clUrID = $clUrID;");
+        $row = $result->fetch_assoc();
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -30,70 +33,8 @@ include '../includes/connectdb.php';
     </head>
 
     <body id="body-pd">
-        <header class="header shadow" id="header">
-            <div class="header_toggle"> 
-                <i class='bx bx-menu' id="header-toggle"></i> 
-            </div>
-            <div id="i--account--admin">
-                <div class="header_img"> 
-                    <a href="AdminHome.php">
-                        <?php 
-                            $clUrID = $_SESSION['clUrID'];
-                            $result = mysqli_query($connectdb, "SELECT clUrPhoto from tbusers where clUrID = $clUrID;");
-                            $row = $result->fetch_assoc();
+       <?php include __DIR__."/AdminNav.php"; ?>
 
-                            if ($row['clUrPhoto'] == ""){
-                                echo '<img src="../images/Display Picture Icon.png" alt="display picture">';
-                            }
-                            else{
-                                echo '<img src="../images/user images/'. $row['clUrPhoto'] .'" alt="display picture">';
-                            }
-                        ?>
-                    </a>
-                </div>
-                <div>
-                    <button type="button" class="btn ms-4 mt-2">
-                        <a href="../includes/logout.php" class="fw-bold" id="i--button--logout">Logout</a>
-                    </button>
-                </div>
-            </div>
-        </header>
-        <div class="l-navbar" id="nav-bar">
-            <nav class="nav">
-                <div> 
-                    <!-- Admin Home with Logo -->
-                    <a href="AdminHome.php" class="nav_logo"> 
-                        <i>
-                            <img src="../images/Small Logo.png" alt="Erovoutika Logo" id="i--logo--erovoutika">
-                        </i> 
-                        <span class="nav_logo-name fs-5 fw-bold">Erouvotika</span> 
-                    </a>
-                    <div class="nav_list"> 
-                        <a href="AdminHome.php" class="nav_link"> 
-                            <i class='bx bx-grid-alt nav_icon'></i> 
-                            <span class="nav_name">Dashboard</span> 
-                        </a> 
-                        <a href="AdminProfile.php" class="nav_link active">
-                            <i class='bx bx-user nav_icon'></i> 
-                            <span class="nav_name fw-bold">Edit Profile</span> 
-                        </a>
-                        <a href="admin_usertable.php" class="nav_link"> 
-                            <i class='bx bx-table nav_icon'></i>
-                            <span class="nav_name">User Table</span> 
-                        </a> 
-                        <a href="AdminExamList.php" class="nav_link"> 
-                            <i class='bx bx-message-square-detail nav_icon'></i> 
-                            <span class="nav_name">Exam List</span> 
-                        </a>
-                    </div>
-                </div> 
-                    <a href="adminsignup_template.php"  class="btn btn-primary ms-3 mb-3">
-                        <i class="bi bi-pencil-square"></i> 
-                        <span class="nav_name" id="i--label--signout">Sign Up</span>
-                    </a>
-                </div> 
-            </nav>
-        </div>
 
         <!--Container Main start-->
         <div class="height-100" id="i--container--mainContent">
@@ -102,10 +43,10 @@ include '../includes/connectdb.php';
                     EDIT PROFILE
                 </div>
                 <form method="post" enctype="multipart/form-data">                
-                    <div class="row mt-5">
+                    <div class="row-sm row-md row mt-5">
                         <!-- Profile Section -->
-                        <div class="col-6">
-                            <div class="container">
+                        <div class="col col-md-6 col-sm">
+                            <div class="container-sm">
                                 <div class="row">
                                     <div class="col fs-2">
                                         PROFILE
@@ -116,7 +57,6 @@ include '../includes/connectdb.php';
                                     <div class="col-4 ms-2" id="i--line--profile"></div>
                                 </div>
                                 <!-- Profile Banners -->
-                                <!-- Firstname -->
                                 <div class="row my-2 gy-3">
                                     <div class="col-11">
                                         <div class="card" id="i--card--edit">
@@ -129,42 +69,23 @@ include '../includes/connectdb.php';
                                                     <div class="row mt-2 fs-5">
                                                         <!-- Display user's firstname as placeholder -->
                                                         <?php
-                                                            $result = mysqli_query($connectdb, "SELECT clUrFirstname from tbusers where clUrID = $clUrID;");
-                                                            $row = $result->fetch_assoc();
+
                                                             echo '<input type="name" class="form-control" id="adminName" aria-describedby="nameAdmin" placeholder="'. $row['clUrFirstname'] .'" name="adminFirstname">';
                                                         ?>
                                                     </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Lastname -->
-                                    <div class="col-11">
-                                        <div class="card" id="i--card--edit">
-                                            <div class="card-body">
-                                                <div class="container">
+                                                    
                                                     <div class="row fs-4 fw-bold">
-                                                        Last NAME:
+                                                        LASTNAME:
                                                     </div>
                                                     <div class="row" id="i--line--card"></div>
                                                     <div class="row mt-2 fs-5">
                                                         <!-- Display user's Lastname as placeholder -->
                                                         <?php
-                                                            $result = mysqli_query($connectdb, "SELECT clUrLastname from tbusers where clUrID = $clUrID;");
-                                                            $row = $result->fetch_assoc();
+        
                                                             echo '<input type="name" class="form-control" id="adminName" aria-describedby="nameAdmin" placeholder="'. $row['clUrLastname'] .'" name="adminLastname">';
                                                         ?>
                                                     </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
 
-                                    <!-- Username -->
-                                    <div class="col-11">
-                                        <div class="card" id="i--card--edit">
-                                            <div class="card-body">
-                                                <div class="container">
                                                     <div class="row fs-4 fw-bold">
                                                         USERNAME:
                                                     </div>
@@ -172,20 +93,11 @@ include '../includes/connectdb.php';
                                                     <div class="row mt-3 fs-5">
                                                         <!-- Display user's firstname as placeholder -->
                                                         <?php
-                                                            $result = mysqli_query($connectdb, "SELECT clUrUsername from tbusers where clUrID = $clUrID;");
-                                                            $row = $result->fetch_assoc();
+                                                        
                                                             echo '<input type="name" class="form-control" id="adminUN" aria-describedby="usernameAdmin" placeholder="'. $row['clUrUsername'] .'" name="adminUN">';
                                                         ?>
                                                     </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Photo -->
-                                    <div class="col-11">
-                                        <div class="card" id="i--card--edit">
-                                            <div class="card-body">
-                                                <div class="container">
+
                                                     <div class="row fs-4 fw-bold">
                                                         PHOTO:
                                                     </div>
@@ -193,10 +105,12 @@ include '../includes/connectdb.php';
                                                     <div class="row mt-3 fs-5">
                                                         <input type="file" class="form-control" id="customFile" name = "file">
                                                     </div>
+
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                  
                                     <!-- Cancel and Save Button -->
                                     <div class="col-11">
                                         <div class="container">
@@ -220,8 +134,8 @@ include '../includes/connectdb.php';
                             
                         </div>
                         <!-- Account Section -->
-                        <div class="col-6">
-                            <div class="container">
+                        <div class="col col-md-6 col-sm">
+                            <div class="container-sm">
                                 <!-- Header -->
                                 <div class="row">
                                     <div class="col-11 fs-2">

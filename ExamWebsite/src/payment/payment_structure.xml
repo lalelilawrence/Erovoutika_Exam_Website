@@ -1,0 +1,191 @@
+==> Response Type 
+
+$payload["data"]["attributes"]["type"];
+
+==> IF payment.paid
+
+    => AMOUNT
+    $payload["data"]["attributes"]["data"]["attributes"]["amount"];
+
+    => STATUS
+    $payload["data"]["attributes"]["data"]["attributes"]["status"];
+
+    => METHOD
+    $payload["data"]["attributes"]["data"]["attributes"]["source"]["type"];
+
+    => REFERENCE_NUMBER
+    $payload["data"]["attributes"]["data"]["attributes"]["external_reference_number"];
+
+    => PAYMENT ID 
+    $payload["data"]["attributes"]["data"]["attributes"]["payment_intent_id"];
+
+==> IF link.payment.paid
+
+    => AMOUNT
+    $payload["data"]["attributes"]["data"]["attributes"]["amount"];
+
+    => STATUS
+    $payload["data"]["attributes"]["data"]["attributes"]["status"];
+
+    => METHOD
+    $payload["data"]["attributes"]["data"]["attributes"]["payments"]["data"]["attributes"]["source"]["type"];
+
+
+
+==> IF FROM SDK 
+
+    => AMOUNT 
+    $payload->resource['']
+
+SAMPLE DATA 
+
+{
+    "data": {
+        "id": "evt_MouK2Kbk5B6iw2E2MJGvgZA3",
+        "type": "event",
+        "attributes": {
+            "type": "payment.paid",
+            "livemode": false,
+            "data": {
+                "id": "pay_iJVRyk14CdMN1nmS14Rc4d7Y",
+                "type": "payment",
+                "attributes": {
+                    "access_url": null,
+                    "amount": 10000,
+                    "balance_transaction_id": "bal_txn_xbmfDoVG9woj6q7pSNHSN9r8",
+                    "billing": {
+                        "address": {
+                            "city": "Taguig",
+                            "country": "PH",
+                            "line1": "12th floor The Trade and Financial Tower u1206",
+                            "line2": "32nd street and 7th Avenue",
+                            "postal_code": "1630",
+                            "state": "Bonifacio Global City"
+                        },
+                        "email": "tests@mail.com",
+                        "name": "213123",
+                        "phone": "test"
+                    },
+                    "currency": "PHP",
+                    "description": "TEST",
+                    "disputed": false,
+                    "external_reference_number": "QqRVt4J",
+                    "fee": 220,
+                    "livemode": false,
+                    "net_amount": 9780,
+                    "origin": "links",
+                    "payment_intent_id": null,
+                    "payout": null,
+                    "source": {
+                        "id": "src_Zpp2amsPiMTuvuorgJcGHCMq",
+                        "type": "grab_pay"
+                    },
+                    "statement_descriptor": "Lakbay Sa Bayan",
+                    "status": "paid",
+                    "tax_amount": null,
+                    "metadata": {
+                        "pm_reference_number": "QqRVt4J"
+                    },
+                    "refunds": [],
+                    "taxes": [],
+                    "available_at": 1682499600,
+                    "created_at": 1682246435,
+                    "credited_at": 1683104400,
+                    "paid_at": 1682246435,
+                    "updated_at": 1682246435
+                }
+            },
+            "previous_data": {},
+            "created_at": 1682246435,
+            "updated_at": 1682246435
+        }
+    }
+}
+
+{
+    "data": {
+        "id": "evt_7qbxTHxaUpB1g8witjA6t2Hy",
+        "type": "event",
+        "attributes": {
+            "type": "link.payment.paid",
+            "livemode": false,
+            "data": {
+                "id": "link_UwGfxFY35ijT1LQtXCuqMuJr",
+                "type": "link",
+                "attributes": {
+                    "amount": 10000,
+                    "archived": false,
+                    "currency": "PHP",
+                    "description": "TEST",
+                    "livemode": false,
+                    "fee": 250,
+                    "remarks": "ADD",
+                    "status": "paid",
+                    "tax_amount": null,
+                    "taxes": [],
+                    "checkout_url": "https://pm.link/lakbayantesting/test/yJ1GU9L",
+                    "reference_number": "yJ1GU9L",
+                    "created_at": 1682181199,
+                    "updated_at": 1682181199,
+                    "payments": [
+                        {
+                            "data": {
+                                "id": "pay_hQ5AaFyv4KVZzkf6EEbpPNfc",
+                                "type": "payment",
+                                "attributes": {
+                                    "access_url": null,
+                                    "amount": 10000,
+                                    "balance_transaction_id": "bal_txn_CqcqkhKuDAxF2JgWsZTi3jtQ",
+                                    "billing": {
+                                        "address": {
+                                            "city": "Taguig",
+                                            "country": "PH",
+                                            "line1": "12th floor The Trade and Financial Tower u1206",
+                                            "line2": "32nd street and 7th Avenue",
+                                            "postal_code": "1630",
+                                            "state": "Bonifacio Global City"
+                                        },
+                                        "email": "vash@test.com",
+                                        "name": "123123",
+                                        "phone": "0123123"
+                                    },
+                                    "currency": "PHP",
+                                    "description": "TEST",
+                                    "disputed": false,
+                                    "external_reference_number": "yJ1GU9L",
+                                    "fee": 250,
+                                    "livemode": false,
+                                    "net_amount": 9750,
+                                    "origin": "links",
+                                    "payment_intent_id": null,
+                                    "payout": null,
+                                    "source": {
+                                        "id": "src_cCBQ6r3A3LVw9LKg8eWxcdXi",
+                                        "type": "gcash"
+                                    },
+                                    "statement_descriptor": "Lakbay Sa Bayan",
+                                    "status": "paid",
+                                    "tax_amount": null,
+                                    "metadata": {
+                                        "pm_reference_number": "yJ1GU9L"
+                                    },
+                                    "refunds": [],
+                                    "taxes": [],
+                                    "available_at": 1682499600,
+                                    "created_at": 1682245989,
+                                    "credited_at": 1683104400,
+                                    "paid_at": 1682245989,
+                                    "updated_at": 1682245989
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            "previous_data": {},
+            "created_at": 1682245989,
+            "updated_at": 1682245989
+        }
+    }
+}
+

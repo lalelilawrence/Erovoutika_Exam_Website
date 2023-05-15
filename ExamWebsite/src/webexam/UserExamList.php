@@ -6,7 +6,8 @@ if($_SESSION['client_sid']==session_id()){
 	if(!isset($_SESSION["client_sid"]) || $_SESSION["client_sid"] !== session_id()){
         header("location: ../login_template.php");
         exit;
-    }		
+    }	
+$clUrID = $_SESSION['clUrID'];	
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,45 +36,8 @@ if($_SESSION['client_sid']==session_id()){
 
 <body>
     <!-------------------------- HEADER ---------------------------->   
-    <header class="bg-white border-5 border-bottom border-primary">
-        <nav class="navbar navbar-expand-lg navbar-light ms-4 me-4">
-            <a class="navbar-brand mr-07" href="#"><img src="../images/Logo2.png" style="height: 60px;"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse ml-7" id="navbarTogglerDemo03">
-                <div class="navbar-nav float-end text-end pr-3">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-item nav-link text-dark mt-3" href="../webexam/UserExamList.php">Exam List</a>
-                        </li>
-                        <li class="nav-item">
-                            <div class="btn-group">
-                              <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="bi bi-person-fill"></i>
-                              </button>
-                              <ul class="dropdown-menu dropdown-menu-end">
-                                <li><a class="dropdown-item" href="../webclient/UserProfile.php"><i class="bi bi-person-circle me-2"></i>Profile</a></li>
-                                <li>
-                                  <?php echo
-                                    '<a class="dropdown-item" href="../webclient/Settings.php">'
-                                    ?>
-                                  <i class="bi bi-gear-fill me-2"></i>Settings</li>
-                                <li>
-                                  <a class="dropdown-item" href="../includes/logout.php">
-                                    <span class="glyphicon me-2">&#xe017;</span>
-                                    Logout
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-	</header>
+    
+   <?php include(__DIR__.'/../webclient/userNav.php'); ?>
 
 	<div class="container-fluid bg-light">
         <div class="main-body">
@@ -86,7 +50,7 @@ if($_SESSION['client_sid']==session_id()){
             <!-------------------------- EXAM CONTENT ---------------------------->
             <?php
 
-              $sql = "SELECT * FROM tbexam WHERE clExPublish = 1";
+              $sql = "SELECT p.*, e.*, u.* FROM tbuserpaidexam AS p INNER JOIN tbexam AS e INNER JOIN tbusers AS u ON p.clUrID = u.clUrID AND p.clExID = e.clExID WHERE e.clExPublish = 1 AND p.clUrID = ".$clUrID."";
               $result = $connectdb->query($sql);
 
               if ($result->num_rows > 0) {
@@ -117,18 +81,18 @@ if($_SESSION['client_sid']==session_id()){
           //<!-- Modal -->
           
                   //To count items in each question
-                  $sql = "SELECT count(*) as total from tbquestion where clExID = ". $row['clExID'] .";";
+                  $sql = "SELECT count(*) as total from tbQuestion where clExID = ". $row['clExID'] .";";
                   $rs = $connectdb->query($sql);
                   $data = $rs->fetch_assoc();
 
                   //To check the exam's question type
                     // Check if there's IDENTIFICATION question
-                      $sql = "SELECT count(*) as total from tbquestion where clExID = ". $row['clExID'] ." and clQsType = 0;";
+                      $sql = "SELECT count(*) as total from tbQuestion where clExID = ". $row['clExID'] ." and clQsType = 0;";
                       $rs = $connectdb->query($sql);
                       $Identification_Q = $rs->fetch_assoc();
 
                     // Check if there's MULTIPLE CHOICE question
-                      $sql = "SELECT count(*) as total from tbquestion where clExID = ". $row['clExID'] ." and clQsType = 1;";
+                      $sql = "SELECT count(*) as total from tbQuestion where clExID = ". $row['clExID'] ." and clQsType = 1;";
                       $rs = $connectdb->query($sql);
                       $Multiple_Q = $rs->fetch_assoc();
 
