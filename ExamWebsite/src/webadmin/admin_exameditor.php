@@ -176,7 +176,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
+ 
         <!-- Bootstrap -->
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" 
@@ -185,6 +187,7 @@
             crossorigin="anonymous"
         />
 
+       
         <!-- Bootstrap Icons -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"/>
         <link href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" rel="stylesheet" crossorigin="anonymous">
@@ -289,7 +292,7 @@
                                         <div class="row">
                                             <!-- Exam ID -->
                                             <div class="row">
-                                                <div class="card mt-3">
+                                                <div class="card mt-3-examid">
                                                     <div class="card-body m-1">
                                                         <div class="row">
                                                             <div class="col-12 mt-1">
@@ -304,7 +307,7 @@
                                             </div>
                                             <!-- Exam Publish Status -->
                                             <div class="row">
-                                                <div class="card mt-3">
+                                                <div class="card mt-3-exampubstat">
                                                     <div class="card-body m-1">
                                                         <div class="row">
                                                             <div class="col-12 mt-1">
@@ -319,7 +322,7 @@
                                             </div>
                                             <!-- Last Edited By -->
                                             <div class="row">
-                                                <div class="card mt-3">
+                                                <div class="card mt-3-lastedit">
                                                     <div class="card-body m-1">
                                                         <div class="row">
                                                             <div class="col-12 mt-1">
@@ -334,7 +337,7 @@
                                             </div>
                                             <!-- Published By -->
                                             <div class="row">
-                                                <div class="card mt-3">
+                                                <div class="card mt-3-pubby">
                                                     <div class="card-body m-1">
                                                         <div class="row">
                                                             <div class="col-12 mt-1">
@@ -349,7 +352,7 @@
                                             </div>
                                             <!-- Exam Name -->
                                             <div class="row">
-                                                <div class="card mt-3">
+                                                <div class="card mt-3-examname">
                                                     <div class="card-body m-1">
                                                         <div class="row">
                                                             <div class="col-12 mt-1">
@@ -364,7 +367,7 @@
                                             </div>
                                             <!-- Exam Info -->
                                             <div class="row">
-                                                <div class="card mt-3">
+                                                <div class="card mt-3-examdesc">
                                                     <div class="card-body m-1">
                                                         <div class="row">
                                                             <div class="col-12 mt-1">
@@ -379,7 +382,7 @@
                                             </div>
                                             <!-- Exam Instructions -->
                                             <div class="row">
-                                                <div class="card mt-3">
+                                                <div class="card mt-3-examinst">
                                                     <div class="card-body m-1">
                                                         <div class="row">
                                                             <div class="col-12 mt-1">
@@ -444,7 +447,7 @@
                                                             ADD NEW QUESTION
                                                         </div>
                                                         <div class="col-4">
-                                                            <button class="btn btn-primary dropdown-toggle"
+                                                            <button class="btn btn-primary dropdown-toggle-selectques"
                                                                 type="button"
                                                                 id="dropdownMicroProcessor"
                                                                 data-bs-toggle="dropdown" 
